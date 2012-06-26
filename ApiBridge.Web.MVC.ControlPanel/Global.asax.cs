@@ -132,27 +132,16 @@ namespace ApiBridge.Web.MVC.ControlPanel
         public static void InitServiceBus(IContainer container)
         {
             // ServiceBus init
-            //BusConfiguration.WithSettings()
-            //.UseAutofacContainer(container)
-            //.ServiceBusApplicationId("AppName")
-            //.ServiceBusIssuerKey("xxx")
-            //.ServiceBusIssuerName("xxx")
-            //.ServiceBusNamespace("xxx")
-            //.RegisterAssembly(typeof(SimpleApiBridgeCommandHandler).Assembly)
-            //.InboundTopicName("xx")
-            //.OutboundTopicName("xxx")
-            //.Configure();
-
             BusConfiguration.WithSettings()
-                .UseAutofacContainer(container)
-                .ServiceBusApplicationId("AppName")
-                .ServiceBusIssuerKey("2vunIjmTPh29/dwWGgjgP6XJmAgG9sGGbyhRPSqk5IQ=")
-                .ServiceBusIssuerName("owner")
-                .ServiceBusNamespace("apibridge")
-                .RegisterAssembly(typeof(SimpleApiBridgeCommandHandler).Assembly)
-                .InboundTopicName("clienttopic")
-                .OutboundTopicName("servertopic")
-                .Configure();
+            .UseAutofacContainer(container)
+            .ServiceBusApplicationId("AppName")
+            .ServiceBusIssuerKey("xxx")
+            .ServiceBusIssuerName("xxx")
+            .ServiceBusNamespace("xxx")
+            .RegisterAssembly(typeof(SimpleApiBridgeCommandHandler).Assembly)
+            .InboundTopicName("xx")
+            .OutboundTopicName("xxx")
+            .Configure();
 
             Bus = ServiceBus;
         }
