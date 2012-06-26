@@ -519,7 +519,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>15940</DevelopmentServerPort>
+          <DevelopmentServerPort>7361</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localpanel.apibridge.com</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -38,16 +38,27 @@ namespace ApiBridge.ConsolePanel
 
         public static void Initialize()
         {
+            //BusConfiguration.WithSettings()
+            //    .UseAutofacContainer()
+            //    .ServiceBusApplicationId("xxx")
+            //    .ServiceBusNamespace("xxx")
+            //    .ServiceBusIssuerName("xxx")
+            //    .ServiceBusIssuerKey("xxx")
+            //    .InboundTopicName("xxx")
+            //    .OutboundTopicName("xxx")
+            //    .RegisterAssembly(typeof(ComplexApiBridgeCommandHandler).Assembly)
+            //    .Configure();
+
             BusConfiguration.WithSettings()
-                .UseAutofacContainer()
-                .ServiceBusApplicationId("xxx")
-                .ServiceBusNamespace("xxx")
-                .ServiceBusIssuerName("xxx")
-                .ServiceBusIssuerKey("xxx")
-                .InboundTopicName("xxx")
-                .OutboundTopicName("xxx")
-                .RegisterAssembly(typeof(ComplexApiBridgeCommandHandler).Assembly)
-                .Configure();
+                            .UseAutofacContainer()
+                            .ServiceBusApplicationId("apiapp")
+                            .ServiceBusNamespace("apibridge")
+                            .ServiceBusIssuerName("owner")
+                            .ServiceBusIssuerKey("2vunIjmTPh29/dwWGgjgP6XJmAgG9sGGbyhRPSqk5IQ=")
+                            .InboundTopicName("clienttopic")
+                            .OutboundTopicName("servertopic")
+                            .RegisterAssembly(typeof(ComplexApiBridgeCommandHandler).Assembly)
+                            .Configure();
         }
 
         static void Main(string[] args)

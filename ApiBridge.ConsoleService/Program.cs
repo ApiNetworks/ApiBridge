@@ -14,16 +14,28 @@ namespace ApiBridge.ConsoleService
     {
         public static void Initialize()
         {
+            //BusConfiguration.WithSettings()
+            //    .UseAutofacContainer()
+            //    .ServiceBusApplicationId("xx")
+            //    .ServiceBusNamespace("xx")
+            //    .ServiceBusIssuerName("xx")
+            //    .ServiceBusIssuerKey("xx")
+            //    .InboundTopicName("xx")
+            //    .OutboundTopicName("xx")
+            //    .RegisterAssembly(typeof(UserLoginEventHandler).Assembly)
+            //    .Configure();
+
             BusConfiguration.WithSettings()
                 .UseAutofacContainer()
-                .ServiceBusApplicationId("xx")
-                .ServiceBusNamespace("xx")
-                .ServiceBusIssuerName("xx")
-                .ServiceBusIssuerKey("xx")
-                .InboundTopicName("xx")
-                .OutboundTopicName("xx")
+                .ServiceBusApplicationId("apiapp")
+                .ServiceBusNamespace("apibridge")
+                .ServiceBusIssuerName("owner")
+                .ServiceBusIssuerKey("2vunIjmTPh29/dwWGgjgP6XJmAgG9sGGbyhRPSqk5IQ=")
+                .InboundTopicName("servertopic")
+                .OutboundTopicName("clienttopic")
                 .RegisterAssembly(typeof(UserLoginEventHandler).Assembly)
                 .Configure();
+
         }
 
         static void Main(string[] args)

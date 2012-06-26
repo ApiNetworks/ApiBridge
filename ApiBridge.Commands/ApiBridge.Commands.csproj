@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tests\FetchCJAdvertisersCommand.cs" />
     <Compile Include="Tests\CommentDeletedEvent.cs" />
     <Compile Include="Tests\CommentEvent.cs" />
     <Compile Include="Tests\UserLoginEvent.cs" />

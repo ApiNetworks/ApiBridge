@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApiBridge.Web.MVC.ControlPanel.Azure" generation="1" functional="0" release="0" Id="2b2466be-2b15-4339-b4be-2e8e876e90b9" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApiBridge.Web.MVC.ControlPanel.Azure" generation="1" functional="0" release="0" Id="3743e59c-8c3c-46f0-9a2c-6f5c7fb9aed6" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="ApiBridge.Web.MVC.ControlPanel.AzureGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -68,9 +68,9 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="a8845ed2-ad20-4153-9603-727010149dc1" ref="Microsoft.RedDog.Contract\ServiceContract\ApiBridge.Web.MVC.ControlPanel.AzureContract@ServiceDefinition.build">
+    <implementation Id="b844875c-3d8c-426f-853a-7132da3161f2" ref="Microsoft.RedDog.Contract\ServiceContract\ApiBridge.Web.MVC.ControlPanel.AzureContract@ServiceDefinition.build">
       <interfacereferences>
-        <interfaceReference Id="dd9d877b-185e-431d-8370-101c4636588c" ref="Microsoft.RedDog.Contract\Interface\ApiBridge.Web.MVC.ControlPanel:Endpoint1@ServiceDefinition.build">
+        <interfaceReference Id="09ecdb53-3ced-4fc1-a431-7cfb3408ddea" ref="Microsoft.RedDog.Contract\Interface\ApiBridge.Web.MVC.ControlPanel:Endpoint1@ServiceDefinition.build">
           <inPort>
             <inPortMoniker name="/ApiBridge.Web.MVC.ControlPanel.Azure/ApiBridge.Web.MVC.ControlPanel.AzureGroup/ApiBridge.Web.MVC.ControlPanel:Endpoint1" />
           </inPort>
