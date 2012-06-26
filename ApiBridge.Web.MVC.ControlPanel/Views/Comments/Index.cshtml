@@ -1,0 +1,83 @@
+﻿@using ApiBridge.Contracts;
+@model List<Comment>
+@{
+    ViewBag.Title = "Index";
+}
+<h1 class="page-title">
+    <i class="icon-user"></i>My Comments
+</h1>
+@using (Html.BeginForm("postcomment", "comments", FormMethod.Post, null))
+{
+    <div class="clearfix">
+        <label for="icomment">
+            <span>Comment:</span></label>
+        <div class="input">
+            <textarea name="text" cols="80" rows="5" style="width: 800px"></textarea>
+        </div>
+    </div>
+    <div class="clearfix">
+        <label for="iusername">
+            <span>Syndicate</span></label>
+        <div class="input">
+            <input type="checkbox" name="syndicationflag" value="1" />
+        </div>
+    </div>
+    <div class="clearfix">
+        <label for="iusername">
+            <span></span>
+        </label>
+        <div class="input">
+            <input type="submit" value="Post Comment" class="btn btn-success btn-large" tabindex="3" />
+        </div>
+    </div>
+}
+@foreach (Comment comment in Model)
+{
+    <div class="row">
+        <div class="span9">
+            <div class="widget">
+                <div class="widget-content">
+                    <h3>
+                        Comments About Your Domain</h3>
+                    <div class="row">
+                        <div class="span1">
+                            <div class="pointbox">
+                                <div class="pointval" id="">
+                                    0
+                                </div>
+                                <div class="pointmsg">
+                                    Points
+                                </div>
+                            </div>
+                            <div style="clear: both; padding-top: 10px;">
+                            </div>
+                            <button class="btn btn-mini btn-success" style="width: 28px" id="api-upvote-">
+                                <i class="icon-arrow-up icon-white"></i>
+                            </button>
+                            <button class="btn btn-mini btn-danger" style="width: 28px" id="api-downvote-">
+                                <i class="icon-arrow-down icon-white"></i>
+                            </button>
+                        </div>
+                        <div class="span6">
+                            <div id="api-container" style="overflow: auto">
+                                @comment.Text
+                                <div style="font-size: 13px; font-weight: bolder">
+                                    Posted by: <a href="/Profile/">@comment.Id</a> on DATE
+                                    
+                                    @using (Html.BeginForm("deletecomment", "comments", FormMethod.Post, null))
+                                    {
+                                        <input type="hidden" name="id" value="@comment.Id" />
+                                        <input type="submit" value="Delete Comment" class="btn btn-success btn-small" />
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear: both; height: 15px; position: relative;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

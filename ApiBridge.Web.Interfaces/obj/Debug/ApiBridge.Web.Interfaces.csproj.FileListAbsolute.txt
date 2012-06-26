@@ -1,0 +1,7 @@
+C:\GitHub\ApiBridge\ApiBridge.Web.Interfaces\bin\Debug\ApiBridge.Web.Interfaces.dll
+C:\GitHub\ApiBridge\ApiBridge.Web.Interfaces\bin\Debug\ApiBridge.Web.Interfaces.pdb
+C:\GitHub\ApiBridge\ApiBridge.Web.Interfaces\bin\Debug\ApiBridge.Contracts.dll
+C:\GitHub\ApiBridge\ApiBridge.Web.Interfaces\bin\Debug\ApiBridge.Contracts.pdb
+C:\GitHub\ApiBridge\ApiBridge.Web.Interfaces\obj\Debug\ResolveAssemblyReference.cache
+C:\GitHub\ApiBridge\ApiBridge.Web.Interfaces\obj\Debug\ApiBridge.Web.Interfaces.dll
+C:\GitHub\ApiBridge\ApiBridge.Web.Interfaces\obj\Debug\ApiBridge.Web.Interfaces.pdb

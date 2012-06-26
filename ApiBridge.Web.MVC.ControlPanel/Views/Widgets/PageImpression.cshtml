@@ -1,0 +1,26 @@
+﻿@model ApiBridge.Web.MVC.ControlPanel.Models.PageImpressionModel
+@{
+    ViewBag.Title = "Page Impression Widget";
+}
+<div class="span9">
+    <h1 class="page-title">
+        <i class="icon-th-large"></i>Page Impression Widget
+    </h1>
+    <div class="row">
+        <div class="span9">
+            <div class="widget">
+                <div class="widget-content">
+                    <h3>
+                        Customize Your Widget</h3>
+                    <form id='appWidgetForm' class="well">
+                    <fieldset>
+                        <div class="editor-label">
+                            Source</div>
+                        <div class="editor-field">@Html.TextAreaFor(x => x.WidgetSource, new { @readonly = "readonly", style = "width:400px; height: 200px;" })</div>
+                    </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

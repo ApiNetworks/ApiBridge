@@ -1,0 +1,5 @@
+C:\GitHub\ApiBridge\ApiBridge.Handlers.Interfaces\bin\Debug\ApiBridge.Handlers.Interfaces.dll
+C:\GitHub\ApiBridge\ApiBridge.Handlers.Interfaces\bin\Debug\ApiBridge.Handlers.Interfaces.pdb
+C:\GitHub\ApiBridge\ApiBridge.Handlers.Interfaces\obj\Debug\ResolveAssemblyReference.cache
+C:\GitHub\ApiBridge\ApiBridge.Handlers.Interfaces\obj\Debug\ApiBridge.Handlers.Interfaces.dll
+C:\GitHub\ApiBridge\ApiBridge.Handlers.Interfaces\obj\Debug\ApiBridge.Handlers.Interfaces.pdb

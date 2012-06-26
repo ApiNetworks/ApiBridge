@@ -1,0 +1,9 @@
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\bin\Debug\ApiBridge.Core.Services.dll
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\bin\Debug\ApiBridge.Core.Services.pdb
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\bin\Debug\Autofac.Configuration.dll
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\bin\Debug\Autofac.dll
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\bin\Debug\Autofac.xml
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\obj\Debug\ResolveAssemblyReference.cache
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\obj\Debug\ApiBridge.Core.Services.dll
+C:\GitHub\ApiBridge\ApiBridge.Core.Services\obj\Debug\ApiBridge.Core.Services.pdb

@@ -1,0 +1,47 @@
+﻿@model ApiBridge.Web.MVC.ControlPanel.Models.LogOnModel
+           
+@{
+    ViewBag.Title = "Control Panel LogOn";
+}
+   
+<div class="widget">
+    <h1 class="page-title">
+        <i class="icon-home"></i>YAHOO.COM - Domain Dashboard
+    </h1>
+    <div class="widget-header">
+        <i class="icon-user"></i>
+        <h3>
+            Login</h3>
+    </div>
+    <!-- /widget-header -->
+    <div class="widget-content">
+        <div id="signin">
+            @using (Html.BeginForm())
+            {
+            <div class="clearfix">
+                <label for="iusername">
+                    <span>Username:</span></label>
+                <div class="input">
+                    @Html.TextBoxFor(m => m.UserName, new { id = "iusername" })
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+            </div>
+            <div class="clearfix">
+                <label for="ipassword">
+                    <span>Password:</span></label>
+                <div class="input">
+                    @Html.PasswordFor(m => m.Password, new { id = "ipassword" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+            </div>
+            <br />
+            <input type="submit" value="Sign into your account" class="btn btn-warning btn-large" tabindex="3" />
+            <p>
+                <a href="/account/register">Register an account here</a></p>
+            }
+        </div>
+    </div>
+    <!-- /widget-content -->
+</div>
+<!-- /widget -->
+   

@@ -1,0 +1,6 @@
+C:\GitHub\ApiBridge\ApiBridge.Contracts\bin\Debug\ApiBridge.Contracts.dll.config
+C:\GitHub\ApiBridge\ApiBridge.Contracts\bin\Debug\ApiBridge.Contracts.dll
+C:\GitHub\ApiBridge\ApiBridge.Contracts\bin\Debug\ApiBridge.Contracts.pdb
+C:\GitHub\ApiBridge\ApiBridge.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\GitHub\ApiBridge\ApiBridge.Contracts\obj\Debug\ApiBridge.Contracts.dll
+C:\GitHub\ApiBridge\ApiBridge.Contracts\obj\Debug\ApiBridge.Contracts.pdb

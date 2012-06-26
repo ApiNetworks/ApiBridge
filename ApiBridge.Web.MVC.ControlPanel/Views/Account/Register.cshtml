@@ -1,0 +1,70 @@
+﻿@model ApiBridge.Web.MVC.ControlPanel.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+@using (Html.BeginForm())
+{
+    <h1 class="page-title">
+        <i class="icon-user"></i>Register A New Account
+    </h1>
+    <div class="row">
+        <div class="span9">
+            <div class="widget">
+                <div class="widget-header">
+                    <h3>Register a New Account</h3>
+                </div>
+                <div class="widget-content">
+                    @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
+
+                    <div class="title">Create an account. It's free!</div>
+                    <div class="clearfix">
+                        <label for="isignup_username">Username:</label>
+                        <div class="input">
+                             @Html.TextBoxFor(m => m.UserName, new { id = "isignup_username" })
+                             @Html.ValidationMessageFor(m => m.UserName)
+                            <span class="help-block">May contain letters, digits, dashes and underscores, and should be between 2 and 20 characters long.</span>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <label for="isignup_email">Email:</label>
+                        <div class="input">
+                            @Html.TextBoxFor(m => m.Email, new { id = "isignup_email" })
+                            @Html.ValidationMessageFor(m => m.Email)
+                            <span class="help-block"><strong>Type carefully.</strong> You will be sent a confirmation email.</span>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <label for="isignup_password">Password:</label>
+                        <div class="input">
+                            @Html.PasswordFor(m => m.Password, new { id = "isignup_password" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                            <span class="help-block">The longer the better. Include numbers for better protection.</span>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <label for="isignup_password">Confirm Password:</label>
+                        <div class="input">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { id = "isignup_password" })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                            <span class="help-block">The longer the better. Include numbers for better protection.</span>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <p class="clickedit">
+                            By clicking on the "Create your account" button below, you certify that you have
+                            read and agree to our <a target="_blank" title="Terms of use" href="/terms">terms of
+                                use</a> and <a target="_blank" title="Privacy policy" href="/privacy">privacy policy</a>.
+                        </p>
+                    </div>
+                    <br />
+                    <input type="submit" value="Create your account" class="btn btn-warning btn-large" tabindex="9" />
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}

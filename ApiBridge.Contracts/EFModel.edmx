@@ -1,0 +1,2048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ApiBridgeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ApiBridgeModelStoreContainer">
+          <EntitySet Name="Ad" EntityType="ApiBridgeModel.Store.Ad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AdGroup" EntityType="ApiBridgeModel.Store.AdGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Application" EntityType="ApiBridgeModel.Store.Application" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Campaign" EntityType="ApiBridgeModel.Store.Campaign" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Domain" EntityType="ApiBridgeModel.Store.Domain" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DomainGroup" EntityType="ApiBridgeModel.Store.DomainGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DomainGroupLink" EntityType="ApiBridgeModel.Store.DomainGroupLink" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DomainUserLink" EntityType="ApiBridgeModel.Store.DomainUserLink" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Offer" EntityType="ApiBridgeModel.Store.Offer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organization" EntityType="ApiBridgeModel.Store.Organization" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Prospect" EntityType="ApiBridgeModel.Store.Prospect" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RequestLog" EntityType="ApiBridgeModel.Store.RequestLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="ApiBridgeModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Target" EntityType="ApiBridgeModel.Store.Target" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="ApiBridgeModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersInRoles" EntityType="ApiBridgeModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WebIdentity" EntityType="ApiBridgeModel.Store.WebIdentity" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Ad_AdGroup" Association="ApiBridgeModel.Store.FK_Ad_AdGroup">
+            <End Role="AdGroup" EntitySet="AdGroup" />
+            <End Role="Ad" EntitySet="Ad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ad_Campaign" Association="ApiBridgeModel.Store.FK_Ad_Campaign">
+            <End Role="Campaign" EntitySet="Campaign" />
+            <End Role="Ad" EntitySet="Ad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdGroup_Campaign" Association="ApiBridgeModel.Store.FK_AdGroup_Campaign">
+            <End Role="Campaign" EntitySet="Campaign" />
+            <End Role="AdGroup" EntitySet="AdGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdGroup_DomainGroup" Association="ApiBridgeModel.Store.FK_AdGroup_DomainGroup">
+            <End Role="DomainGroup" EntitySet="DomainGroup" />
+            <End Role="AdGroup" EntitySet="AdGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdGroup_Organization" Association="ApiBridgeModel.Store.FK_AdGroup_Organization">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="AdGroup" EntitySet="AdGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Campaign_Domain" Association="ApiBridgeModel.Store.FK_Campaign_Domain">
+            <End Role="Domain" EntitySet="Domain" />
+            <End Role="Campaign" EntitySet="Campaign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Campaign_DomainGroup" Association="ApiBridgeModel.Store.FK_Campaign_DomainGroup">
+            <End Role="DomainGroup" EntitySet="DomainGroup" />
+            <End Role="Campaign" EntitySet="Campaign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Campaign_User" Association="ApiBridgeModel.Store.FK_Campaign_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Campaign" EntitySet="Campaign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DomainGroupLink_Domain" Association="ApiBridgeModel.Store.FK_DomainGroupLink_Domain">
+            <End Role="Domain" EntitySet="Domain" />
+            <End Role="DomainGroupLink" EntitySet="DomainGroupLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DomainGroupLink_DomainGroup" Association="ApiBridgeModel.Store.FK_DomainGroupLink_DomainGroup">
+            <End Role="DomainGroup" EntitySet="DomainGroup" />
+            <End Role="DomainGroupLink" EntitySet="DomainGroupLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DomainUser_User" Association="ApiBridgeModel.Store.FK_DomainUser_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="DomainUserLink" EntitySet="DomainUserLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DomainUserLink_Domain" Association="ApiBridgeModel.Store.FK_DomainUserLink_Domain">
+            <End Role="Domain" EntitySet="Domain" />
+            <End Role="DomainUserLink" EntitySet="DomainUserLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_Domain" Association="ApiBridgeModel.Store.FK_Offer_Domain">
+            <End Role="Domain" EntitySet="Domain" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_Application" Association="ApiBridgeModel.Store.FK_Role_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="Role" EntitySet="Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Target_AdGroup" Association="ApiBridgeModel.Store.FK_Target_AdGroup">
+            <End Role="AdGroup" EntitySet="AdGroup" />
+            <End Role="Target" EntitySet="Target" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Target_Campaign" Association="ApiBridgeModel.Store.FK_Target_Campaign">
+            <End Role="Campaign" EntitySet="Campaign" />
+            <End Role="Target" EntitySet="Target" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Application" Association="ApiBridgeModel.Store.FK_User_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersInRoles_Role" Association="ApiBridgeModel.Store.FK_UsersInRoles_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersInRoles_User" Association="ApiBridgeModel.Store.FK_UsersInRoles_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebIdentity_Domain" Association="ApiBridgeModel.Store.FK_WebIdentity_Domain">
+            <End Role="Domain" EntitySet="Domain" />
+            <End Role="WebIdentity" EntitySet="WebIdentity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebIdentity_User" Association="ApiBridgeModel.Store.FK_WebIdentity_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="WebIdentity" EntitySet="WebIdentity" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CampaignId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CampaignName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="AdGroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AdGroupName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DomainId" Type="uniqueidentifier" />
+          <Property Name="OfferId" Type="uniqueidentifier" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Text" Type="varchar" MaxLength="1000" />
+          <Property Name="Width" Type="smallint" />
+          <Property Name="Height" Type="smallint" />
+          <Property Name="DisplayUrl" Type="varchar" MaxLength="100" />
+          <Property Name="DestinationUrl" Type="varchar" MaxLength="1024" />
+          <Property Name="ExpirationDate" Type="datetime" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="DomainUrlId" Type="uniqueidentifier" />
+          <Property Name="ReferenceLink" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AdGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CampaignId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CampaignName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DomainGroupId" Type="uniqueidentifier" />
+          <Property Name="DomainId" Type="uniqueidentifier" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="OrgId" Type="uniqueidentifier" />
+          <Property Name="DomainGroupName" Type="varchar" MaxLength="100" />
+          <Property Name="ReferenceLink" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Campaign">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" />
+          <Property Name="DomainId" Type="uniqueidentifier" />
+          <Property Name="DomainGroupId" Type="uniqueidentifier" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DailyBudget" Type="money" />
+          <Property Name="MinBid" Type="smallmoney" Nullable="false" />
+          <Property Name="MaxBid" Type="smallmoney" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="DomainGroupName" Type="varchar" MaxLength="100" />
+          <Property Name="ReferenceLink" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Domain">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="70" />
+          <Property Name="SubDomain" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="TagData" Type="varchar" MaxLength="150" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="Theme" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DomainGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DomainId" Type="uniqueidentifier" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="DomainGroupLink">
+          <Key>
+            <PropertyRef Name="DomainId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="DomainId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DomainUserLink">
+          <Key>
+            <PropertyRef Name="DomainId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="DomainId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Offer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DomainId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SubDomain" Type="varchar" MaxLength="50" />
+          <Property Name="DomainName" Type="varchar" Nullable="false" MaxLength="70" />
+          <Property Name="Privacy" Type="tinyint" Nullable="false" />
+          <Property Name="Slug" Type="varchar" MaxLength="250" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Summary" Type="varchar" MaxLength="500" />
+          <Property Name="Html" Type="ntext" />
+          <Property Name="DestinationUrl" Type="varchar" MaxLength="1000" />
+          <Property Name="ContentType" Type="tinyint" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="FormType" Type="int" Nullable="false" />
+          <Property Name="XslType" Type="int" />
+          <Property Name="Xml" Type="xml" />
+          <Property Name="ApiKey" Type="varchar" MaxLength="1024" />
+          <Property Name="TagData" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Context" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="AdvertiserContactEmail" Type="nvarchar" MaxLength="250" />
+          <Property Name="AdvertiserContactName" Type="nvarchar" MaxLength="250" />
+          <Property Name="AdvertiserContactPhone" Type="nvarchar" MaxLength="30" />
+          <Property Name="AdvertiserContactTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdvertiserName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Category" Type="nvarchar" MaxLength="250" />
+          <Property Name="ReferenceLink" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="City" Type="nvarchar" MaxLength="30" />
+          <Property Name="Country" Type="nvarchar" MaxLength="20" />
+          <Property Name="DefaultHitCommission" Type="nvarchar" MaxLength="20" />
+          <Property Name="DefaultLeadCommission" Type="nvarchar" MaxLength="20" />
+          <Property Name="DefaultSaleCommission" Type="nvarchar" MaxLength="20" />
+          <Property Name="Language" Type="nvarchar" MaxLength="20" />
+          <Property Name="LinkCount" Type="int" Nullable="false" />
+          <Property Name="NetworkRank" Type="nvarchar" MaxLength="50" />
+          <Property Name="PerformanceIncentives" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProgramHost" Type="nvarchar" MaxLength="200" />
+          <Property Name="ProgramUrl" Type="nvarchar" MaxLength="2048" />
+          <Property Name="ResolvedDomain" Type="varchar" MaxLength="100" />
+          <Property Name="SevenDayEpc" Type="nvarchar" MaxLength="20" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThirtyDayEpc" Type="nvarchar" MaxLength="20" />
+          <Property Name="ThreeMonthEpc" Type="nvarchar" MaxLength="20" />
+          <Property Name="VerifiedDomain" Type="varchar" MaxLength="100" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.PostTagLink' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Prospect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" />
+          <Property Name="RequestId" Type="uniqueidentifier" />
+          <Property Name="CampaignId" Type="uniqueidentifier" />
+          <Property Name="AdGroupId" Type="uniqueidentifier" />
+          <Property Name="AdId" Type="uniqueidentifier" />
+          <Property Name="TargetId" Type="uniqueidentifier" />
+          <Property Name="OfferId" Type="uniqueidentifier" />
+          <Property Name="TransactionId" Type="varchar" MaxLength="100" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="320" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zip" Type="varchar" MaxLength="10" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="char" MaxLength="1" />
+          <Property Name="DobYear" Type="int" />
+          <Property Name="DobMonth" Type="int" />
+          <Property Name="DobDay" Type="int" />
+          <Property Name="IP" Type="varchar" MaxLength="15" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Data" Type="xml" />
+        </EntityType>
+        <EntityType Name="RequestLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" Type="uniqueidentifier" />
+          <Property Name="FromUserId" Type="uniqueidentifier" />
+          <Property Name="FromDomainId" Type="uniqueidentifier" />
+          <Property Name="FromCampaignId" Type="uniqueidentifier" />
+          <Property Name="FromAdGroupId" Type="uniqueidentifier" />
+          <Property Name="FromAdId" Type="uniqueidentifier" />
+          <Property Name="FromOfferId" Type="uniqueidentifier" />
+          <Property Name="FromTargetId" Type="uniqueidentifier" />
+          <Property Name="ToUserId" Type="uniqueidentifier" />
+          <Property Name="ToDomainId" Type="uniqueidentifier" />
+          <Property Name="ToCampaignId" Type="uniqueidentifier" />
+          <Property Name="ToAdGroupId" Type="uniqueidentifier" />
+          <Property Name="ToAdId" Type="uniqueidentifier" />
+          <Property Name="ToOfferId" Type="uniqueidentifier" />
+          <Property Name="ToTargetId" Type="uniqueidentifier" />
+          <Property Name="SessionId" Type="uniqueidentifier" />
+          <Property Name="ActionId" Type="uniqueidentifier" />
+          <Property Name="Target" MaxLength="250" Type="varchar" />
+          <Property Name="RemoteIP" Nullable="false" MaxLength="15" Type="varchar" />
+          <Property Name="UserAgent" MaxLength="250" Type="varchar" />
+          <Property Name="RequestPath" MaxLength="1000" Type="varchar" />
+          <Property Name="QueryString" MaxLength="1000" Type="varchar" />
+          <Property Name="Country" MaxLength="50" Type="varchar" />
+          <Property Name="Region" MaxLength="50" Type="varchar" />
+          <Property Name="Organization" MaxLength="50" Type="varchar" />
+          <Property Name="City" MaxLength="50" Type="varchar" />
+          <Property Name="PostalCode" MaxLength="15" Type="varchar" />
+          <Property Name="Latitude" Precision="9" Scale="6" Type="decimal" />
+          <Property Name="Longitude" Precision="9" Scale="6" Type="decimal" />
+          <Property Name="MetroCode" Type="int" />
+          <Property Name="DmaCode" Type="int" />
+          <Property Name="AreaCode" Type="int" />
+          <Property Name="RequestType" Nullable="false" Type="tinyint" />
+          <Property Name="HttpStatusCode" Type="smallint" />
+          <Property Name="Referrer" MaxLength="1000" Type="varchar" />
+          <Property Name="RedirectionUrl" MaxLength="1000" Type="varchar" />
+          <Property Name="Bid" Type="smallmoney" />
+          <Property Name="Cost" Type="smallmoney" />
+          <Property Name="Price" Type="smallmoney" />
+          <Property Name="Sid" MaxLength="70" Type="varchar" />
+          <Property Name="Revenue" Type="smallmoney" />
+          <Property Name="CreationDate" Nullable="false" Type="datetime" />
+          <Property Name="Status" Nullable="false" Type="tinyint" />
+          <Property Name="ServerID" MaxLength="50" Type="varchar" />
+          <Property Name="Impression" Nullable="false" Type="tinyint" />
+          <Property Name="Click" Nullable="false" Type="tinyint" />
+          <Property Name="Post" Nullable="false" Type="tinyint" />
+          <Property Name="Action" Nullable="false" Type="tinyint" />
+          <Property Name="Api" Nullable="false" Type="tinyint" />
+          <Property Name="QR" Nullable="false" Type="tinyint" />
+          <Property Name="Call" Nullable="false" Type="tinyint" />
+          <Property Name="RedirectionHost" MaxLength="100" Type="varchar" />
+          <Property Name="RequestHost" MaxLength="100" Type="varchar" />
+          <Property Name="ReferrerHost" MaxLength="100" Type="varchar" />
+          <Property Name="Theme" MaxLength="25" Type="varchar" />
+          <Property Name="ExecutionTime" Type="int" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Target">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CampaignId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CampaignName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="AdGroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AdGroupName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Bid" Type="smallmoney" />
+          <Property Name="MinBid" Type="smallmoney" />
+          <Property Name="MaxBid" Type="smallmoney" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProspectId" Type="uniqueidentifier" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="255" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" />
+          <Property Name="IsOnline" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="LastLockedOutDate" Type="datetime" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" />
+          <Property Name="LastModified" Type="datetime" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebIdentity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DomainId" Type="uniqueidentifier" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="ApiKey" Type="varchar" MaxLength="1024" />
+          <Property Name="ApiToken" Type="varchar" MaxLength="1024" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="Data" Type="xml" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="PartnerId" Type="uniqueidentifier" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.CashFlowDailyView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.DomainContractView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.DomainGroupView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.DomainProposalView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.ExpenseDailyViewData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.ExpenseDataDailyView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.ExpenseDataView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.ProspectAdminDailyView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.ProspectCampaignDailyView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.ProspectSummaryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.ProspectUserDailyView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.RevenueDailyViewData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.RevenueDataDailyView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ApiBridge.dbo.RevenueDataView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <Association Name="FK_Ad_AdGroup">
+          <End Role="AdGroup" Type="ApiBridgeModel.Store.AdGroup" Multiplicity="1" />
+          <End Role="Ad" Type="ApiBridgeModel.Store.Ad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ad">
+              <PropertyRef Name="AdGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ad_Campaign">
+          <End Role="Campaign" Type="ApiBridgeModel.Store.Campaign" Multiplicity="1" />
+          <End Role="Ad" Type="ApiBridgeModel.Store.Ad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaign">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ad">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdGroup_Campaign">
+          <End Role="Campaign" Type="ApiBridgeModel.Store.Campaign" Multiplicity="1" />
+          <End Role="AdGroup" Type="ApiBridgeModel.Store.AdGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaign">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdGroup">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdGroup_DomainGroup">
+          <End Role="DomainGroup" Type="ApiBridgeModel.Store.DomainGroup" Multiplicity="0..1" />
+          <End Role="AdGroup" Type="ApiBridgeModel.Store.AdGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomainGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdGroup">
+              <PropertyRef Name="DomainGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdGroup_Organization">
+          <End Role="Organization" Type="ApiBridgeModel.Store.Organization" Multiplicity="0..1" />
+          <End Role="AdGroup" Type="ApiBridgeModel.Store.AdGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdGroup">
+              <PropertyRef Name="OrgId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Campaign_Domain">
+          <End Role="Domain" Type="ApiBridgeModel.Store.Domain" Multiplicity="0..1" />
+          <End Role="Campaign" Type="ApiBridgeModel.Store.Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="DomainId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Campaign_DomainGroup">
+          <End Role="DomainGroup" Type="ApiBridgeModel.Store.DomainGroup" Multiplicity="0..1" />
+          <End Role="Campaign" Type="ApiBridgeModel.Store.Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomainGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="DomainGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Campaign_User">
+          <End Role="User" Type="ApiBridgeModel.Store.User" Multiplicity="0..1" />
+          <End Role="Campaign" Type="ApiBridgeModel.Store.Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DomainGroupLink_Domain">
+          <End Role="Domain" Type="ApiBridgeModel.Store.Domain" Multiplicity="1" />
+          <End Role="DomainGroupLink" Type="ApiBridgeModel.Store.DomainGroupLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DomainGroupLink">
+              <PropertyRef Name="DomainId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DomainGroupLink_DomainGroup">
+          <End Role="DomainGroup" Type="ApiBridgeModel.Store.DomainGroup" Multiplicity="1" />
+          <End Role="DomainGroupLink" Type="ApiBridgeModel.Store.DomainGroupLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomainGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DomainGroupLink">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DomainUser_User">
+          <End Role="User" Type="ApiBridgeModel.Store.User" Multiplicity="1" />
+          <End Role="DomainUserLink" Type="ApiBridgeModel.Store.DomainUserLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DomainUserLink">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DomainUserLink_Domain">
+          <End Role="Domain" Type="ApiBridgeModel.Store.Domain" Multiplicity="1" />
+          <End Role="DomainUserLink" Type="ApiBridgeModel.Store.DomainUserLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DomainUserLink">
+              <PropertyRef Name="DomainId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_Domain">
+          <End Role="Domain" Type="ApiBridgeModel.Store.Domain" Multiplicity="1" />
+          <End Role="Offer" Type="ApiBridgeModel.Store.Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="DomainId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_Application">
+          <End Role="Application" Type="ApiBridgeModel.Store.Application" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Role" Type="ApiBridgeModel.Store.Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Target_AdGroup">
+          <End Role="AdGroup" Type="ApiBridgeModel.Store.AdGroup" Multiplicity="1" />
+          <End Role="Target" Type="ApiBridgeModel.Store.Target" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Target">
+              <PropertyRef Name="AdGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Target_Campaign">
+          <End Role="Campaign" Type="ApiBridgeModel.Store.Campaign" Multiplicity="1" />
+          <End Role="Target" Type="ApiBridgeModel.Store.Target" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaign">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Target">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Application">
+          <End Role="Application" Type="ApiBridgeModel.Store.Application" Multiplicity="1" />
+          <End Role="User" Type="ApiBridgeModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersInRoles_Role">
+          <End Role="Role" Type="ApiBridgeModel.Store.Role" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="ApiBridgeModel.Store.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersInRoles_User">
+          <End Role="User" Type="ApiBridgeModel.Store.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersInRoles" Type="ApiBridgeModel.Store.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebIdentity_Domain">
+          <End Role="Domain" Type="ApiBridgeModel.Store.Domain" Multiplicity="0..1" />
+          <End Role="WebIdentity" Type="ApiBridgeModel.Store.WebIdentity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebIdentity">
+              <PropertyRef Name="DomainId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebIdentity_User">
+          <End Role="User" Type="ApiBridgeModel.Store.User" Multiplicity="1" />
+          <End Role="WebIdentity" Type="ApiBridgeModel.Store.WebIdentity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebIdentity">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AdGroupView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="StartDate" Type="datetime" Mode="In" />
+          <Parameter Name="EndDate" Type="datetime" Mode="In" />
+          <Parameter Name="PageNumber" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="tinyint" Mode="In" />
+          <Parameter Name="Filter" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AdView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="StartDate" Type="datetime" Mode="In" />
+          <Parameter Name="EndDate" Type="datetime" Mode="In" />
+          <Parameter Name="PageNumber" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="tinyint" Mode="In" />
+          <Parameter Name="Filter" Type="varchar" Mode="In" />
+          <Parameter Name="AdType" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="CampaignView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="StartDate" Type="datetime" Mode="In" />
+          <Parameter Name="EndDate" Type="datetime" Mode="In" />
+          <Parameter Name="PageNumber" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="tinyint" Mode="In" />
+          <Parameter Name="Filter" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="rpt_RevenueData_Daily" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Userid" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="stp_MatchEndPoint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="stp_MatchEndPoint_Target" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="target" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="stp_MatchEndPoint_TargetUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="target" Type="varchar" Mode="In" />
+          <Parameter Name="userId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="stp_Select_Domain_User" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DomainName" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="stp_UserAccount_CMD_Publish" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ApiBridgeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="EFDataModelContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Applications" EntityType="ApiBridgeModel.Application" />
+          <EntitySet Name="Users" EntityType="ApiBridgeModel.User" />
+          <AssociationSet Name="FK_User_Application" Association="ApiBridgeModel.FK_User_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Prospects" EntityType="ApiBridgeModel.Prospect" />
+          <FunctionImport Name="Select_Domain_User">
+            <Parameter Name="DomainName" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="RevenueDataDaily" ReturnType="Collection(ApiBridgeModel.RevenueDataDailyResult)">
+            <Parameter Name="Userid" Mode="In" Type="Guid" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="Roles" EntityType="ApiBridgeModel.Role" />
+          <AssociationSet Name="FK_Role_Application" Association="ApiBridgeModel.FK_Role_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="Role" EntitySet="Roles" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInRoles" Association="ApiBridgeModel.UsersInRoles">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <FunctionImport Name="MatchEndPoint">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="MatchEndPointTarget">
+          <Parameter Name="target" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MatchEndPointTargetUser">
+            <Parameter Name="target" Mode="In" Type="String" />
+            <Parameter Name="userId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="CampaignView" ReturnType="Collection(ApiBridgeModel.CampaignView)">
+            <Parameter Name="UserId" Mode="In" Type="Guid" />
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+            <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Byte" />
+            <Parameter Name="Filter" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Campaigns" EntityType="ApiBridgeModel.Campaign" />
+          <EntitySet Name="Targets" EntityType="ApiBridgeModel.Target" />
+          <AssociationSet Name="FK_Campaign_User" Association="ApiBridgeModel.FK_Campaign_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Campaign" EntitySet="Campaigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Target_Campaign" Association="ApiBridgeModel.FK_Target_Campaign">
+            <End Role="Campaign" EntitySet="Campaigns" />
+            <End Role="Target" EntitySet="Targets" />
+          </AssociationSet>
+          <EntitySet Name="AdGroups" EntityType="ApiBridgeModel.AdGroup" />
+          <AssociationSet Name="FK_AdGroup_Campaign" Association="ApiBridgeModel.FK_AdGroup_Campaign">
+            <End Role="Campaign" EntitySet="Campaigns" />
+            <End Role="AdGroup" EntitySet="AdGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Target_AdGroup" Association="ApiBridgeModel.FK_Target_AdGroup">
+            <End Role="AdGroup" EntitySet="AdGroups" />
+            <End Role="Target" EntitySet="Targets" />
+          </AssociationSet>
+          <EntitySet Name="Offers" EntityType="ApiBridgeModel.Offer" />
+          <AssociationSet Name="FK_Offer_User" Association="ApiBridgeModel.FK_Offer_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Offer" EntitySet="Offers" />
+          </AssociationSet>
+          <EntitySet Name="Ads" EntityType="ApiBridgeModel.Ad" />
+          <AssociationSet Name="FK_Ad_AdGroup" Association="ApiBridgeModel.FK_Ad_AdGroup">
+            <End Role="AdGroup" EntitySet="AdGroups" />
+            <End Role="Ad" EntitySet="Ads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ad_Campaign" Association="ApiBridgeModel.FK_Ad_Campaign">
+            <End Role="Campaign" EntitySet="Campaigns" />
+            <End Role="Ad" EntitySet="Ads" />
+          </AssociationSet>
+          <EntitySet Name="RequestLogs" EntityType="ApiBridgeModel.RequestLog" />
+          <EntitySet Name="WebIdentities" EntityType="ApiBridgeModel.WebIdentity" />
+          <AssociationSet Name="FK_WebIdentity_User" Association="ApiBridgeModel.FK_WebIdentity_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="WebIdentity" EntitySet="WebIdentities" />
+          </AssociationSet>
+          <EntitySet Name="Domains" EntityType="ApiBridgeModel.Domain" />
+          <AssociationSet Name="FK_Campaign_Domain" Association="ApiBridgeModel.FK_Campaign_Domain">
+            <End Role="Domain" EntitySet="Domains" />
+            <End Role="Campaign" EntitySet="Campaigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offer_Domain" Association="ApiBridgeModel.FK_Offer_Domain">
+            <End Role="Domain" EntitySet="Domains" />
+            <End Role="Offer" EntitySet="Offers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebIdentity_Domain" Association="ApiBridgeModel.FK_WebIdentity_Domain">
+            <End Role="Domain" EntitySet="Domains" />
+            <End Role="WebIdentity" EntitySet="WebIdentities" />
+          </AssociationSet>
+          <AssociationSet Name="DomainUserLink" Association="ApiBridgeModel.DomainUserLink">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Domain" EntitySet="Domains" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" ><a:Display Order="0" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" ><a:Display Order="1" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" ><a:Display Order="2" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <NavigationProperty Name="Users" Relationship="ApiBridgeModel.FK_User_Application" FromRole="Application" ToRole="User" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" ><a:Display Order="3" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" Name="Creation Date" GroupName="" Description="" Prompt="" Sortable="True" Editable="True" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="Status" Nullable="false" ><a:Display Order="4" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <NavigationProperty Name="Roles" Relationship="ApiBridgeModel.FK_Role_Application" FromRole="Application" ToRole="Role" />
+        <pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /></EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" ><a:Display Order="0" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" ><a:Display Order="20" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" Name="Creation Date" GroupName="" Description="" Prompt="" Sortable="True" Editable="True" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" ><a:Display Order="1" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" ><a:Display Order="2" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="Password" Type="String" MaxLength="100" Unicode="true" FixedLength="false" ><a:Display Order="14" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="PasswordQuestion" Type="String" MaxLength="255" Unicode="true" FixedLength="false" ><a:Display Order="15" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="PasswordAnswer" Type="String" MaxLength="255" Unicode="true" FixedLength="false" ><a:Display Order="18" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" ><a:Display Order="19" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" ><a:Display Order="3" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="LastLoginDate" Type="DateTime" ><a:Display Order="16" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="LastPasswordChangedDate" Type="DateTime" ><a:Display Order="17" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="IsOnline" Type="Boolean" Nullable="false" ><a:Display Order="7" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" ><a:Display Order="8" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="LastLockedOutDate" Type="DateTime" ><a:Display Order="6" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" ><a:Display Order="4" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" ><a:Display Order="5" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" ><a:Display Order="9" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" ><a:Display Order="12" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="LastModified" Type="DateTime" ><a:Display Order="13" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" ><a:Display Order="11" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <NavigationProperty Name="Application" Relationship="ApiBridgeModel.FK_User_Application" FromRole="User" ToRole="Application" />
+          <Property Type="Guid" Name="ProspectId" ><a:Display Order="10" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="Status" Nullable="false" ><a:Display Order="21" Visible="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <NavigationProperty Name="Roles" Relationship="ApiBridgeModel.UsersInRoles" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Campaigns" Relationship="ApiBridgeModel.FK_Campaign_User" FromRole="User" ToRole="Campaign" />
+          <NavigationProperty Name="Offers" Relationship="ApiBridgeModel.FK_Offer_User" FromRole="User" ToRole="Offer" />
+          <NavigationProperty Name="WebIdentities" Relationship="ApiBridgeModel.FK_WebIdentity_User" FromRole="User" ToRole="WebIdentity" />
+          <NavigationProperty Name="Domains" Relationship="ApiBridgeModel.DomainUserLink" FromRole="User" ToRole="Domain" />
+          <pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /></EntityType>
+        <Association Name="FK_User_Application">
+          <End Role="Application" Type="ApiBridgeModel.Application" Multiplicity="1" />
+          <End Role="User" Type="ApiBridgeModel.User" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Prospect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FullName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Zip" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gender" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="DobYear" />
+          <Property Type="Int32" Name="DobMonth" />
+          <Property Type="Int32" Name="DobDay" />
+          <Property Type="String" Name="IP" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="RequestId" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Guid" Name="UserId" />
+          <Property Type="String" Name="Data" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CampaignId" />
+          <Property Type="String" Name="TransactionId" MaxLength="100" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Type="Guid" Name="AdGroupId" Nullable="true" />
+          <Property Type="Guid" Name="AdId" Nullable="true" />
+          <Property Type="Guid" Name="TargetId" Nullable="true" />
+          <Property Type="Guid" Name="OfferId" Nullable="true" />
+        </EntityType>
+        <ComplexType Name="Match_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="true" />
+          <Property Type="String" Name="TargetName" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="OfferUrl" Nullable="false" MaxLength="1000" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Guid" Name="OfferId" Nullable="false" />
+          <Property Type="Guid" Name="TargetId" Nullable="false" />
+          <Property Type="Decimal" Name="Bid" Nullable="false" Precision="10" />
+          <Property Type="Decimal" Name="MinBid" Nullable="false" Precision="10" />
+          <Property Type="Decimal" Name="MaxBid" Nullable="false" Precision="10" />
+          <Property Type="Byte" Name="Rank" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="RevenueDataDailyResult">
+          <Property Type="String" Name="ReportDate" Nullable="false" MaxLength="30" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" Precision="19" />
+        </ComplexType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="ApiBridgeModel.FK_Role_Application" FromRole="Role" ToRole="Application" />
+          <NavigationProperty Name="Users" Relationship="ApiBridgeModel.UsersInRoles" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Role_Application">
+          <End Type="ApiBridgeModel.Application" Role="Application" Multiplicity="1" />
+          <End Type="ApiBridgeModel.Role" Role="Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInRoles">
+          <End Type="ApiBridgeModel.Role" Role="Role" Multiplicity="*" />
+          <End Type="ApiBridgeModel.User" Role="User" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="CampaignView">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Budget" Nullable="false" Precision="19" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="Action" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" Precision="38" Scale="6" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" Precision="38" Scale="6" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="Net" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" Precision="38" Scale="6" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="CampaignSummaryView" >
+          <Property Type="Int32" Name="Action" Nullable="false" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" />
+          <Property Type="Decimal" Name="Budget" Nullable="false" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" />
+          <Property Type="Decimal" Name="Net" Nullable="false" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" />
+          <Property Type="Int32" Name="Total" Nullable="false" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="AdGroupSummaryView">
+          <Property Type="Int32" Name="Action" Nullable="false" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" />
+          <Property Type="Decimal" Name="Budget" Nullable="false" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" />
+          <Property Type="Decimal" Name="Net" Nullable="false" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" />
+          <Property Type="Int32" Name="Total" Nullable="false" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="AdGroupView">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Budget" Nullable="false" Precision="19" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="Action" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" Precision="38" Scale="6" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" Precision="38" Scale="6" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="Net" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" Precision="38" Scale="6" />
+          <Property Type="Guid" Name="CampaignId" Nullable="false" />
+          <Property Type="String" Name="CampaignName" Nullable="false" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="AdSummaryView">
+          <Property Type="Int32" Name="Action" Nullable="false" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" />
+          <Property Type="Decimal" Name="Budget" Nullable="false" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" />
+          <Property Type="Decimal" Name="Net" Nullable="false" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" />
+          <Property Type="Int32" Name="Total" Nullable="false" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ReportDailySummary" >
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="ReportDate" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Hit" Nullable="false" DefaultValue="0" />
+        </ComplexType>
+        <ComplexType Name="ReportDailyCampaignSummary">
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="ReportDate" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Hit" Nullable="false" DefaultValue="0" />
+          <Property Type="Guid" Name="CampaignId" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Campaign">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="DomainId" Nullable="true" />
+          <Property Type="Guid" Name="DomainGroupId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="DailyBudget" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="MinBid" Nullable="false" Precision="10" Scale="4" />
+          <Property Type="Decimal" Name="MaxBid" Nullable="false" Precision="10" Scale="4" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" ><a:Display Name="Creation Date" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="Rank" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="ApiBridgeModel.FK_Campaign_User" FromRole="Campaign" ToRole="User" />
+          <NavigationProperty Name="Targets" Relationship="ApiBridgeModel.FK_Target_Campaign" FromRole="Campaign" ToRole="Target" />
+          <NavigationProperty Name="AdGroups" Relationship="ApiBridgeModel.FK_AdGroup_Campaign" FromRole="Campaign" ToRole="AdGroup" />
+          <NavigationProperty Name="Ads" Relationship="ApiBridgeModel.FK_Ad_Campaign" FromRole="Campaign" ToRole="Ad" />
+          <NavigationProperty Name="Domain" Relationship="ApiBridgeModel.FK_Campaign_Domain" FromRole="Campaign" ToRole="Domain" />
+          <Property Type="String" Name="DomainGroupName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReferenceLink" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Target">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="CampaignId" Nullable="false" />
+          <Property Type="String" Name="CampaignName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="AdGroupId" Nullable="false" />
+          <Property Type="String" Name="AdGroupName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Bid" Precision="10" Scale="4" Nullable="false" />
+          <Property Type="Decimal" Name="MinBid" Precision="10" Scale="4" Nullable="false" />
+          <Property Type="Decimal" Name="MaxBid" Precision="10" Scale="4" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" ><a:Display Name="Creation Date" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="Rank" Nullable="false" />
+          <NavigationProperty Name="Campaign" Relationship="ApiBridgeModel.FK_Target_Campaign" FromRole="Target" ToRole="Campaign" />
+          <NavigationProperty Name="AdGroup" Relationship="ApiBridgeModel.FK_Target_AdGroup" FromRole="Target" ToRole="AdGroup" />
+        </EntityType>
+        <Association Name="FK_Campaign_User">
+          <End Type="ApiBridgeModel.User" Role="User" Multiplicity="1" />
+          <End Type="ApiBridgeModel.Campaign" Role="Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Target_Campaign">
+          <End Type="ApiBridgeModel.Campaign" Role="Campaign" Multiplicity="1" />
+          <End Type="ApiBridgeModel.Target" Role="Target" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaign">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Target">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AdGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="CampaignId" Nullable="false" />
+          <Property Type="String" Name="CampaignName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="DomainGroupId" Nullable="true" />
+          <Property Type="Guid" Name="DomainId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" ><a:Display Name="Creation Date" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="Rank" Nullable="false" />
+          <NavigationProperty Name="Campaign" Relationship="ApiBridgeModel.FK_AdGroup_Campaign" FromRole="AdGroup" ToRole="Campaign" />
+          <NavigationProperty Name="Targets" Relationship="ApiBridgeModel.FK_Target_AdGroup" FromRole="AdGroup" ToRole="Target" />
+          <NavigationProperty Name="Ads" Relationship="ApiBridgeModel.FK_Ad_AdGroup" FromRole="AdGroup" ToRole="Ad" />
+          <Property Type="String" Name="DomainGroupName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReferenceLink" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="OrgId" />
+        </EntityType>
+        <Association Name="FK_AdGroup_Campaign">
+          <End Type="ApiBridgeModel.Campaign" Role="Campaign" Multiplicity="1" />
+          <End Type="ApiBridgeModel.AdGroup" Role="AdGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaign">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdGroup">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Target_AdGroup">
+          <End Type="ApiBridgeModel.AdGroup" Role="AdGroup" Multiplicity="1" />
+          <End Type="ApiBridgeModel.Target" Role="Target" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Target">
+              <PropertyRef Name="AdGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Offer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="DomainId" Nullable="false" />
+          <Property Type="Byte" Name="Privacy" Nullable="false" />
+          <Property Type="String" Name="Slug" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="Summary" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Html" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DestinationUrl" MaxLength="1000" FixedLength="false" Unicode="false" ><a:Display Name="Destination Url" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="ContentType" Nullable="false" ><a:Display Name="Content Type" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" ><a:Display Name="Creation Date" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="Rank" Nullable="false" />
+          <Property Type="Int32" Name="FormType" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="ApiBridgeModel.FK_Offer_User" FromRole="Offer" ToRole="User" />
+          <Property Type="String" Name="DomainName" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SubDomain" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="XslType" />
+          <Property Type="String" Name="Xml" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ApiKey" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Domain" Relationship="ApiBridgeModel.FK_Offer_Domain" FromRole="Offer" ToRole="Domain" />
+          <Property Type="String" Name="TagData" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Offer_User">
+          <End Type="ApiBridgeModel.User" Role="User" Multiplicity="1" />
+          <End Type="ApiBridgeModel.Offer" Role="Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="CampaignId" Nullable="false" />
+          <Property Type="String" Name="CampaignName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="AdGroupId" Nullable="false" />
+          <Property Type="String" Name="AdGroupName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="DomainId" />
+          <Property Type="Guid" Name="OfferId" />
+          <Property Type="String" Name="Text" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="Width" />
+          <Property Type="Int16" Name="Height" />
+          <Property Type="String" Name="DisplayUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DestinationUrl" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ExpirationDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" ><a:Display Name="Creation Date" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="Rank" Nullable="false" />
+          <NavigationProperty Name="AdGroup" Relationship="ApiBridgeModel.FK_Ad_AdGroup" FromRole="Ad" ToRole="AdGroup" />
+          <NavigationProperty Name="Campaign" Relationship="ApiBridgeModel.FK_Ad_Campaign" FromRole="Ad" ToRole="Campaign" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="String" Name="ReferenceLink" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="DomainUrlId" />
+        </EntityType>
+        <Association Name="FK_Ad_AdGroup">
+          <End Type="ApiBridgeModel.AdGroup" Role="AdGroup" Multiplicity="1" />
+          <End Type="ApiBridgeModel.Ad" Role="Ad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ad">
+              <PropertyRef Name="AdGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ad_Campaign">
+          <End Type="ApiBridgeModel.Campaign" Role="Campaign" Multiplicity="1" />
+          <End Type="ApiBridgeModel.Ad" Role="Ad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaign">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ad">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RequestLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" Type="Guid" />
+          <Property Name="FromUserId" Nullable="true" Type="Guid" />
+          <Property Name="FromDomainId" Nullable="true" Type="Guid" />
+          <Property Name="FromCampaignId" Nullable="true" Type="Guid" />
+          <Property Name="FromAdGroupId" Nullable="true" Type="Guid" />
+          <Property Name="FromAdId" Nullable="true" Type="Guid" />
+          <Property Name="FromOfferId" Nullable="true" Type="Guid" />
+          <Property Name="FromTargetId" Nullable="true" Type="Guid" />
+          <Property Name="ToUserId" Nullable="true" Type="Guid" />
+          <Property Name="ToDomainId" Nullable="true" Type="Guid" />
+          <Property Name="ToCampaignId" Nullable="true" Type="Guid" />
+          <Property Name="ToAdGroupId" Nullable="true" Type="Guid" />
+          <Property Name="ToAdId" Nullable="true" Type="Guid" />
+          <Property Name="ToOfferId" Nullable="true" Type="Guid" />
+          <Property Name="ToTargetId" Nullable="true" Type="Guid" />
+          <Property Name="SessionId" Nullable="true" Type="Guid" />
+          <Property Name="ActionId" Nullable="true" Type="Guid" />
+          <Property Name="Target" Nullable="true" MaxLength="250" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="RemoteIP" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="UserAgent" Nullable="true" MaxLength="250" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="RequestPath" Nullable="true" MaxLength="1000" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="QueryString" Nullable="true" MaxLength="1000" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Country" Nullable="true" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Region" Nullable="true" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Organization" Nullable="true" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="City" Nullable="true" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="PostalCode" Nullable="true" MaxLength="15" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Latitude" Nullable="true" Precision="9" Scale="6" Type="Decimal" />
+          <Property Name="Longitude" Nullable="true" Precision="9" Scale="6" Type="Decimal" />
+          <Property Name="MetroCode" Nullable="true" Type="Int32" />
+          <Property Name="DmaCode" Nullable="true" Type="Int32" />
+          <Property Name="AreaCode" Nullable="true" Type="Int32" />
+          <Property Name="RequestType" Nullable="false" Type="Byte" />
+          <Property Name="HttpStatusCode" Nullable="true" Type="Int16" />
+          <Property Name="Referrer" Nullable="true" MaxLength="1000" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="RedirectionUrl" Nullable="true" MaxLength="1000" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Bid" Nullable="true" Precision="10" Scale="4" Type="Decimal" />
+          <Property Name="Cost" Nullable="true" Precision="10" Scale="4" Type="Decimal" />
+          <Property Name="Price" Nullable="true" Precision="10" Scale="4" Type="Decimal" />
+          <Property Name="Sid" Nullable="true" MaxLength="70" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Revenue" Nullable="true" Precision="10" Scale="4" Type="Decimal" />
+          <Property Name="CreationDate" Nullable="false" Type="DateTime" />
+          <Property Name="Status" Nullable="false" Type="Byte" />
+          <Property Name="ServerID" Nullable="true" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Impression" Nullable="false" Type="Byte" />
+          <Property Name="Click" Nullable="false" Type="Byte" />
+          <Property Name="Post" Nullable="false" Type="Byte" />
+          <Property Name="Action" Nullable="false" Type="Byte" />
+          <Property Name="Api" Nullable="false" Type="Byte" />
+          <Property Name="QR" Nullable="false" Type="Byte" />
+          <Property Name="Call" Nullable="false" Type="Byte" />
+          <Property Name="RequestHost" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="ReferrerHost" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="RedirectionHost" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Theme" MaxLength="25" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="ExecutionTime" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="DataSummary" >
+          <Property Type="Decimal" Name="Budget" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="Action" Nullable="false" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" />
+          <Property Type="Decimal" Name="Net" Nullable="false" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" />
+          <Property Type="Int32" Name="Total" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="AdView" >
+          <Property Type="String" Name="Text" Nullable="false" />
+          <Property Type="String" Name="DisplayUrl" Nullable="false" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="CampaignId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="AdGroupId" Nullable="false" />
+          <Property Type="String" Name="CampaignName" Nullable="false" />
+          <Property Type="String" Name="AdGroupName" Nullable="false" />
+          <Property Type="Decimal" Name="Budget" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" />
+          <Property Type="Decimal" Name="Net" Nullable="false" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="String" Name="DestinationUrl" Nullable="false" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="Int16" Name="Width" Nullable="false" />
+          <Property Type="Int16" Name="Height" Nullable="false" />
+          <Property Type="Int32" Name="Action" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TargetView" >
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="CampaignId" Nullable="false" />
+          <Property Type="String" Name="CampaignName" Nullable="false" />
+          <Property Type="Guid" Name="AdGroupId" Nullable="false" />
+          <Property Type="String" Name="AdGroupName" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Decimal" Name="Budget" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" />
+          <Property Type="Decimal" Name="Net" Nullable="false" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" />
+          <Property Type="Int32" Name="Action" Nullable="false" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ReportDataSummary">
+          <Property Type="Decimal" Name="Budget" Nullable="false" />
+          <Property Type="Int32" Name="Impression" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="Action" Nullable="false" />
+          <Property Type="Int32" Name="QR" Nullable="false" />
+          <Property Type="Int32" Name="Call" Nullable="false" />
+          <Property Type="Decimal" Name="CTR" Nullable="false" />
+          <Property Type="Decimal" Name="ConversionRate" Nullable="false" />
+          <Property Type="Decimal" Name="AvgCPC" Nullable="false" />
+          <Property Type="Decimal" Name="EPC" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" />
+          <Property Type="Decimal" Name="Revenue" Nullable="false" />
+          <Property Type="Decimal" Name="Net" Nullable="false" />
+          <Property Type="Decimal" Name="ROI" Nullable="false" />
+          <Property Type="Int32" Name="Total" Nullable="false" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="WebIdentity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="DomainId" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="PartnerId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApiKey" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApiToken" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastLogin" />
+          <Property Type="String" Name="Data" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="Int32" Name="Rank" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="ApiBridgeModel.FK_WebIdentity_User" FromRole="WebIdentity" ToRole="User" />
+          <NavigationProperty Name="Domain" Relationship="ApiBridgeModel.FK_WebIdentity_Domain" FromRole="WebIdentity" ToRole="Domain" />
+        </EntityType>
+        <Association Name="FK_WebIdentity_User">
+          <End Type="ApiBridgeModel.User" Role="User" Multiplicity="1" />
+          <End Type="ApiBridgeModel.WebIdentity" Role="WebIdentity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebIdentity">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Domain">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" ><a:Display Name="Domain Name" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="String" Name="SubDomain" MaxLength="50" FixedLength="false" Unicode="false" ><a:Display Name="Sub Domain" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" ><a:Display Name="Creation Date" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <NavigationProperty Name="Campaigns" Relationship="ApiBridgeModel.FK_Campaign_Domain" FromRole="Domain" ToRole="Campaign" />
+          <NavigationProperty Name="Offers" Relationship="ApiBridgeModel.FK_Offer_Domain" FromRole="Domain" ToRole="Offer" />
+          <NavigationProperty Name="WebIdentities" Relationship="ApiBridgeModel.FK_WebIdentity_Domain" FromRole="Domain" ToRole="WebIdentity" />
+          <NavigationProperty Name="Users" Relationship="ApiBridgeModel.DomainUserLink" FromRole="Domain" ToRole="User" />
+          <Property Type="String" Name="TagData" MaxLength="150" FixedLength="false" Unicode="false" ><a:Display Name="Tags" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="Int32" Name="Rank" Nullable="false" ><a:Display Name="Rank" GroupName="" Description="" Prompt="" Sortable="true" Editable="true" xmlns:a="http://schemas.microsoft.com/PEM/2009/01" /><pem:Validations xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" Enforcement="None" /><pem:UIHints xmlns:pem="http://schemas.microsoft.com/PEM/2009/01" /></Property>
+          <Property Type="String" Name="Theme" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Campaign_Domain">
+          <End Type="ApiBridgeModel.Domain" Role="Domain" Multiplicity="0..1" />
+          <End Type="ApiBridgeModel.Campaign" Role="Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaign">
+              <PropertyRef Name="DomainId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offer_Domain">
+          <End Type="ApiBridgeModel.Domain" Role="Domain" Multiplicity="1" />
+          <End Type="ApiBridgeModel.Offer" Role="Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="DomainId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebIdentity_Domain">
+          <End Type="ApiBridgeModel.Domain" Role="Domain" Multiplicity="0..1" />
+          <End Type="ApiBridgeModel.WebIdentity" Role="WebIdentity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebIdentity">
+              <PropertyRef Name="DomainId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DomainUserLink">
+          <End Type="ApiBridgeModel.User" Role="User" Multiplicity="*" />
+          <End Type="ApiBridgeModel.Domain" Role="Domain" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ApiBridgeModelStoreContainer" CdmEntityContainer="EFDataModelContext">
+          <EntitySetMapping Name="Applications"><EntityTypeMapping TypeName="ApiBridgeModel.Application"><MappingFragment StoreEntitySet="Application">
+            <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="ApiBridgeModel.User"><MappingFragment StoreEntitySet="User">
+            <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ProspectId" ColumnName="ProspectId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+            <ScalarProperty Name="Username" ColumnName="Username" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+            <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+            <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+            <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+            <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+            <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+            <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+            <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+            <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
+            <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+            <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+            <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+            <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+            <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+            <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_User_Application" TypeName="ApiBridgeModel.FK_User_Application" StoreEntitySet="User">
+            <EndProperty Name="Application">
+              <ScalarProperty Name="Id" ColumnName="ApplicationId" />
+            </EndProperty>
+            <EndProperty Name="User">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Prospects">
+            <EntityTypeMapping TypeName="ApiBridgeModel.Prospect">
+              <MappingFragment StoreEntitySet="Prospect">
+                <ScalarProperty Name="OfferId" ColumnName="OfferId" />
+                <ScalarProperty Name="TargetId" ColumnName="TargetId" />
+                <ScalarProperty Name="AdId" ColumnName="AdId" />
+                <ScalarProperty Name="AdGroupId" ColumnName="AdGroupId" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="DobDay" ColumnName="DobDay" />
+                <ScalarProperty Name="DobMonth" ColumnName="DobMonth" />
+                <ScalarProperty Name="DobYear" ColumnName="DobYear" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Select_Domain_User" FunctionName="ApiBridgeModel.Store.stp_Select_Domain_User" />
+          <FunctionImportMapping FunctionImportName="RevenueDataDaily" FunctionName="ApiBridgeModel.Store.rpt_RevenueData_Daily">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ApiBridgeModel.RevenueDataDailyResult">
+                <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+                <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="ApiBridgeModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsersInRoles" TypeName="ApiBridgeModel.UsersInRoles" StoreEntitySet="UsersInRoles">
+            <EndProperty Name="User">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="Role">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="MatchEndPoint" FunctionName="ApiBridgeModel.Store.stp_MatchEndPoint" />
+          <FunctionImportMapping FunctionImportName="MatchEndPointTarget" FunctionName="ApiBridgeModel.Store.stp_MatchEndPoint_Target" />
+          <FunctionImportMapping FunctionImportName="MatchEndPointTargetUser" FunctionName="ApiBridgeModel.Store.stp_MatchEndPoint_TargetUser" />
+          <FunctionImportMapping FunctionImportName="CampaignView" FunctionName="ApiBridgeModel.Store.CampaignView">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ApiBridgeModel.CampaignView">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Budget" ColumnName="Budget" />
+                <ScalarProperty Name="Impression" ColumnName="Impression" />
+                <ScalarProperty Name="Hit" ColumnName="Hit" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="CTR" ColumnName="CTR" />
+                <ScalarProperty Name="ConversionRate" ColumnName="ConversionRate" />
+                <ScalarProperty Name="AvgCPC" ColumnName="AvgCPC" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="EPC" ColumnName="EPC" />
+                <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+                <ScalarProperty Name="Net" ColumnName="Net" />
+                <ScalarProperty Name="ROI" ColumnName="ROI" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Campaigns">
+            <EntityTypeMapping TypeName="ApiBridgeModel.Campaign">
+              <MappingFragment StoreEntitySet="Campaign">
+                <ScalarProperty Name="ReferenceLink" ColumnName="ReferenceLink" />
+                <ScalarProperty Name="DomainGroupName" ColumnName="DomainGroupName" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="MaxBid" ColumnName="MaxBid" />
+                <ScalarProperty Name="MinBid" ColumnName="MinBid" />
+                <ScalarProperty Name="DailyBudget" ColumnName="DailyBudget" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DomainGroupId" ColumnName="DomainGroupId" />
+                <ScalarProperty Name="DomainId" ColumnName="DomainId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Targets">
+            <EntityTypeMapping TypeName="ApiBridgeModel.Target">
+              <MappingFragment StoreEntitySet="Target">
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="MaxBid" ColumnName="MaxBid" />
+                <ScalarProperty Name="MinBid" ColumnName="MinBid" />
+                <ScalarProperty Name="Bid" ColumnName="Bid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AdGroupName" ColumnName="AdGroupName" />
+                <ScalarProperty Name="AdGroupId" ColumnName="AdGroupId" />
+                <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdGroups">
+            <EntityTypeMapping TypeName="ApiBridgeModel.AdGroup">
+              <MappingFragment StoreEntitySet="AdGroup">
+                <ScalarProperty Name="OrgId" ColumnName="OrgId" />
+                <ScalarProperty Name="ReferenceLink" ColumnName="ReferenceLink" />
+                <ScalarProperty Name="DomainGroupName" ColumnName="DomainGroupName" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DomainId" ColumnName="DomainId" />
+                <ScalarProperty Name="DomainGroupId" ColumnName="DomainGroupId" />
+                <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Offers">
+            <EntityTypeMapping TypeName="ApiBridgeModel.Offer">
+              <MappingFragment StoreEntitySet="Offer">
+                <ScalarProperty Name="TagData" ColumnName="TagData" />
+                <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+                <ScalarProperty Name="Xml" ColumnName="Xml" />
+                <ScalarProperty Name="XslType" ColumnName="XslType" />
+                <ScalarProperty Name="SubDomain" ColumnName="SubDomain" />
+                <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+                <ScalarProperty Name="FormType" ColumnName="FormType" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+                <ScalarProperty Name="DestinationUrl" ColumnName="DestinationUrl" />
+                <ScalarProperty Name="Html" ColumnName="Html" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="Privacy" ColumnName="Privacy" />
+                <ScalarProperty Name="DomainId" ColumnName="DomainId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ads">
+            <EntityTypeMapping TypeName="ApiBridgeModel.Ad">
+              <MappingFragment StoreEntitySet="Ad">
+                <ScalarProperty Name="DomainUrlId" ColumnName="DomainUrlId" />
+                <ScalarProperty Name="ReferenceLink" ColumnName="ReferenceLink" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="DestinationUrl" ColumnName="DestinationUrl" />
+                <ScalarProperty Name="DisplayUrl" ColumnName="DisplayUrl" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="OfferId" ColumnName="OfferId" />
+                <ScalarProperty Name="DomainId" ColumnName="DomainId" />
+                <ScalarProperty Name="AdGroupName" ColumnName="AdGroupName" />
+                <ScalarProperty Name="AdGroupId" ColumnName="AdGroupId" />
+                <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestLogs">
+            <EntityTypeMapping TypeName="ApiBridgeModel.RequestLog">
+              <MappingFragment StoreEntitySet="RequestLog">
+                <ScalarProperty Name="ExecutionTime" ColumnName="ExecutionTime" />
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="RedirectionHost" ColumnName="RedirectionHost" />
+                <ScalarProperty Name="ReferrerHost" ColumnName="ReferrerHost" />
+                <ScalarProperty Name="RequestHost" ColumnName="RequestHost" />
+                <ScalarProperty Name="Call" ColumnName="Call" />
+                <ScalarProperty Name="QR" ColumnName="QR" />
+                <ScalarProperty Name="Api" ColumnName="Api" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="Click" ColumnName="Click" />
+                <ScalarProperty Name="Impression" ColumnName="Impression" />
+                <ScalarProperty Name="ServerID" ColumnName="ServerID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+                <ScalarProperty Name="Sid" ColumnName="Sid" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Bid" ColumnName="Bid" />
+                <ScalarProperty Name="RedirectionUrl" ColumnName="RedirectionUrl" />
+                <ScalarProperty Name="Referrer" ColumnName="Referrer" />
+                <ScalarProperty Name="HttpStatusCode" ColumnName="HttpStatusCode" />
+                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="DmaCode" ColumnName="DmaCode" />
+                <ScalarProperty Name="MetroCode" ColumnName="MetroCode" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="QueryString" ColumnName="QueryString" />
+                <ScalarProperty Name="RequestPath" ColumnName="RequestPath" />
+                <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+                <ScalarProperty Name="RemoteIP" ColumnName="RemoteIP" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="ToTargetId" ColumnName="ToTargetId" />
+                <ScalarProperty Name="ToOfferId" ColumnName="ToOfferId" />
+                <ScalarProperty Name="ToAdId" ColumnName="ToAdId" />
+                <ScalarProperty Name="ToAdGroupId" ColumnName="ToAdGroupId" />
+                <ScalarProperty Name="ToCampaignId" ColumnName="ToCampaignId" />
+                <ScalarProperty Name="ToDomainId" ColumnName="ToDomainId" />
+                <ScalarProperty Name="ToUserId" ColumnName="ToUserId" />
+                <ScalarProperty Name="FromTargetId" ColumnName="FromTargetId" />
+                <ScalarProperty Name="FromOfferId" ColumnName="FromOfferId" />
+                <ScalarProperty Name="FromAdId" ColumnName="FromAdId" />
+                <ScalarProperty Name="FromAdGroupId" ColumnName="FromAdGroupId" />
+                <ScalarProperty Name="FromCampaignId" ColumnName="FromCampaignId" />
+                <ScalarProperty Name="FromDomainId" ColumnName="FromDomainId" />
+                <ScalarProperty Name="FromUserId" ColumnName="FromUserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebIdentities">
+            <EntityTypeMapping TypeName="ApiBridgeModel.WebIdentity">
+              <MappingFragment StoreEntitySet="WebIdentity">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="ApiToken" ColumnName="ApiToken" />
+                <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DomainId" ColumnName="DomainId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Domains">
+            <EntityTypeMapping TypeName="ApiBridgeModel.Domain">
+              <MappingFragment StoreEntitySet="Domain">
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="TagData" ColumnName="TagData" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="SubDomain" ColumnName="SubDomain" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="DomainUserLink" TypeName="ApiBridgeModel.DomainUserLink" StoreEntitySet="DomainUserLink">
+            <EndProperty Name="Domain">
+              <ScalarProperty Name="Id" ColumnName="DomainId" />
+            </EndProperty>
+            <EndProperty Name="User">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EFModel" ZoomLevel="72" ShowGrid="false">
+        <EntityTypeShape EntityType="ApiBridgeModel.Application" Width="1.5" PointX="0.75" PointY="0.5" Height="2.3648893229166661" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApiBridgeModel.User" Width="2.75" PointX="5" PointY="0.5" Height="8.9031380208333317" IsExpanded="true" />
+        <AssociationConnector Association="ApiBridgeModel.FK_User_Application" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="0.71875" />
+          <ConnectorPoint PointX="5" PointY="0.71875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ApiBridgeModel.Prospect" Width="2.25" PointX="0.75" PointY="3.875" Height="6.21091796875" />
+        <EntityTypeShape EntityType="ApiBridgeModel.Role" Width="1.5" PointX="3" PointY="1" Height="2.364889322916639" />
+        <AssociationConnector Association="ApiBridgeModel.FK_Role_Application" >
+          <ConnectorPoint PointX="2.25" PointY="1.9324446614583331" />
+          <ConnectorPoint PointX="3" PointY="1.9324446614583331" />
+        </AssociationConnector>
+        <AssociationConnector Association="ApiBridgeModel.UsersInRoles" >
+          <ConnectorPoint PointX="4.5" PointY="2.1824446614583195" />
+          <ConnectorPoint PointX="5" PointY="2.1824446614583195" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ApiBridgeModel.Campaign" Width="2.25" PointX="5" PointY="7.625" Height="4.480205078125" />
+        <EntityTypeShape EntityType="ApiBridgeModel.Target" Width="2.25" PointX="5" PointY="12.625" Height="3.9033007812499996" />
+        <AssociationConnector Association="ApiBridgeModel.FK_Campaign_User" >
+          <ConnectorPoint PointX="6.125" PointY="6.9032194010416656" />
+          <ConnectorPoint PointX="6.125" PointY="7.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ApiBridgeModel.FK_Target_Campaign" >
+          <ConnectorPoint PointX="6.125" PointY="12.105205078125" />
+          <ConnectorPoint PointX="6.125" PointY="12.625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ApiBridgeModel.AdGroup" Width="2.25" PointX="8.125" PointY="10.25" Height="4.0956022135416656" />
+        <AssociationConnector Association="ApiBridgeModel.FK_AdGroup_Campaign" >
+          <ConnectorPoint PointX="7.25" PointY="11.1776025390625" />
+          <ConnectorPoint PointX="8.125" PointY="11.1776025390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ApiBridgeModel.FK_Target_AdGroup" >
+          <ConnectorPoint PointX="8.125" PointY="13.485301106770834" />
+          <ConnectorPoint PointX="7.25" PointY="13.485301106770834" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ApiBridgeModel.Offer" Width="2.5" PointX="13.625" PointY="0.75" Height="5.2494108072916656" />
+        <AssociationConnector Association="ApiBridgeModel.FK_Offer_User" >
+          <ConnectorPoint PointX="7.75" PointY="1.09375" />
+          <ConnectorPoint PointX="13.625" PointY="1.09375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ApiBridgeModel.Ad" Width="2.375" PointX="11.125" PointY="9.125" Height="5.2494108072916656" />
+        <AssociationConnector Association="ApiBridgeModel.FK_Ad_AdGroup" >
+          <ConnectorPoint PointX="10.375" PointY="12.297801106770834" />
+          <ConnectorPoint PointX="11.125" PointY="12.297801106770834" />
+        </AssociationConnector>
+        <AssociationConnector Association="ApiBridgeModel.FK_Ad_Campaign" >
+          <ConnectorPoint PointX="7.25" PointY="9.65625" />
+          <ConnectorPoint PointX="11.125" PointY="9.65625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ApiBridgeModel.RequestLog" PointX="14.25" PointY="7" Width="2.5" Height="11.787659505208332" />
+        <EntityTypeShape EntityType="ApiBridgeModel.WebIdentity" Width="1.875" PointX="8.375" PointY="2.5" Height="4.480205078125" />
+        <AssociationConnector Association="ApiBridgeModel.FK_WebIdentity_User" >
+          <ConnectorPoint PointX="7.75" PointY="4.7016097005208328" />
+          <ConnectorPoint PointX="8.375" PointY="4.7016097005208328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ApiBridgeModel.Domain" Width="2" PointX="10.875" PointY="1.5" Height="3.5186979166666656" />
+        <AssociationConnector Association="ApiBridgeModel.FK_Campaign_Domain" >
+          <ConnectorPoint PointX="10.96875" PointY="5.0186979166666656" />
+          <ConnectorPoint PointX="10.96875" PointY="8.34375" />
+          <ConnectorPoint PointX="7.25" PointY="8.34375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ApiBridgeModel.FK_Offer_Domain" >
+          <ConnectorPoint PointX="12.875" PointY="3.2593489583333328" />
+          <ConnectorPoint PointX="13.625" PointY="3.2593489583333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="ApiBridgeModel.FK_WebIdentity_Domain" >
+          <ConnectorPoint PointX="10.875" PointY="3.7593489583333328" />
+          <ConnectorPoint PointX="10.25" PointY="3.7593489583333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="ApiBridgeModel.DomainUserLink" >
+          <ConnectorPoint PointX="7.75" PointY="1.96875" />
+          <ConnectorPoint PointX="10.875" PointY="1.96875" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

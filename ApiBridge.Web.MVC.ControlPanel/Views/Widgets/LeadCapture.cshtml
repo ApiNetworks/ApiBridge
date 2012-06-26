@@ -1,0 +1,58 @@
+﻿@model ApiBridge.Web.MVC.ControlPanel.Models.LeadCaptureModel
+@{
+    ViewBag.Title = "Lead Capture Widget";
+}
+
+<div class="span9">
+    <h1 class="page-title">
+        <i class="icon-th-large"></i>Lead Capture Widget
+    </h1>
+    <div class="row">
+        <div class="span9">
+        <div class="widget">
+        <div class="widget-content">
+        <h3>Customize Your Widget</h3>
+<form id='appWidgetForm' class="well">
+<fieldset>
+    <div class="editor-label">Form Type</div>
+    <div class="editor-field">@Html.DropDownListFor(x => x.SelectedFormType, Model.FormTypeList)</div>
+
+    <div class="editor-label">@Html.LabelFor(x => x.Height)</div>
+    <div class="editor-field">@Html.TextBoxFor(x => x.Height, new { style = "width:400px;" })</div>
+
+    <div class="editor-label">@Html.LabelFor(x => x.Width)</div>
+    <div class="editor-field">@Html.TextBoxFor(x => x.Width, new { style = "width:400px;" })</div>
+
+    <div class="editor-label">Source</div>
+    <div class="editor-field">@Html.TextAreaFor(x => x.WidgetSource, new { @readonly = "readonly", style = "width:400px; height: 200px;" })</div>
+
+    
+</fieldset>
+</form>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    $().ready(function () {
+        AppWidget = '#appWidgetForm';
+        Width = '#width';
+        Height = '#height';
+        FormType = '#selectedFormType';
+        $(Width).keyup(ChangeSize);
+        $(Height).keyup(ChangeSize);
+        $(FormType).change(ChangeSize);
+    });
+
+    function ChangeSize(e) {
+        $.ajax({
+            url: '/AppWidgets/domain/form/UpdateDomainFormSource',
+            type: 'POST',
+            data: $(AppWidget).serialize(),
+            success: function (result) {
+                $('#appWidget_source').val(result);
+            }
+        });
+        return false;
+    }
+</script>

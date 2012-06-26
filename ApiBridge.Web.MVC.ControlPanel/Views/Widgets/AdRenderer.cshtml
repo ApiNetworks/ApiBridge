@@ -1,0 +1,72 @@
+﻿@model ApiBridge.Web.MVC.ControlPanel.Models.AdRendererModel
+@{
+    ViewBag.Title = "Ad Renderer Widget";
+}
+
+<div class="span9">
+    <h1 class="page-title">
+        <i class="icon-th-large"></i>Ad Renderer Widget
+    </h1>
+    <div class="row">
+        <div class="span9">
+        <div class="widget">
+        <div class="widget-header"><h3>Ad Renderer Widget</h3></div>
+        <div class="widget-content">
+            <form id="appWidgetForm" >
+            <fieldset>
+                <div class="editor-label">
+                    Ad Sizes:</div>
+                <div class="editor-field">@Html.DropDownList("adSizeList", Model.AdSizeList)</div>
+                <div class="editor-label">
+                    Ad Types:</div>
+                <div class="editor-field">@Html.DropDownList("adTypes", Model.AdTypeList)</div>
+                <div class="editor-label">
+                    Source</div>
+                <div class="editor-field">@Html.TextAreaFor(x => x.WidgetSource, new { @readonly = "readonly", style = "width:400px; height: 200px;" })</div>
+                @Html.HiddenFor(x => x.SelectedSize)
+                @Html.HiddenFor(x => x.SelectedAdType)
+            </fieldset>
+            </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $().ready(function () {
+        AppWidget = '#appWidgetForm';
+        SelectedSize = '#selectedSize';
+        SizeList = '#adSizeList';
+        TypeList = '#adTypes'
+        SelectedType = '#selectedAdType';
+
+        $(SizeList).change(function () {
+            $(SelectedSize).val(this.value);
+            $(SelectedType).val($(TypeList).val());
+            $.ajax({
+                url: '/widgets/UpdateAdRendererSource',
+                type: 'POST',
+                data: $(AppWidget).serialize(),
+                success: function (result) {
+                    $('#appWidget_source').val(result);
+                }
+            });
+            return false;
+        });
+
+        $(TypeList).change(function () {
+            $(SelectedSize).val($(SizeList).val());
+            $(SelectedType).val(this.value);
+            $.ajax({
+                url: '/AppWidgets/Widget/Domain/adrender/UpdateDomainAdSource',
+                type: 'POST',
+                data: $(AppWidget).serialize(),
+                success: function (result) {
+                    $('#appWidget_source').val(result);
+                    $('#Preview').attr('src', result);
+                }
+            });
+            return false;
+        });
+    });
+</script>

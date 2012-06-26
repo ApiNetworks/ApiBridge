@@ -1,0 +1,7 @@
+C:\GitHub\ApiBridge\ApiBridge.Commands\bin\Debug\ApiBridge.Commands.dll
+C:\GitHub\ApiBridge\ApiBridge.Commands\bin\Debug\ApiBridge.Commands.pdb
+C:\GitHub\ApiBridge\ApiBridge.Commands\bin\Debug\ApiBridge.Contracts.dll
+C:\GitHub\ApiBridge\ApiBridge.Commands\bin\Debug\ApiBridge.Contracts.pdb
+C:\GitHub\ApiBridge\ApiBridge.Commands\obj\Debug\ResolveAssemblyReference.cache
+C:\GitHub\ApiBridge\ApiBridge.Commands\obj\Debug\ApiBridge.Commands.dll
+C:\GitHub\ApiBridge\ApiBridge.Commands\obj\Debug\ApiBridge.Commands.pdb

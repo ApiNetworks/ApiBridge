@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3747FBA0-6B78-433F-A5F7-F7D62975AFCB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApiBridge.Bus</RootNamespace>
+    <AssemblyName>ApiBridge.Bus</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resources\Azure\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resources\Azure\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\MessageHandlerConfigurationAttribute.cs" />
+    <Compile Include="Container\AutofacBusContainer.cs" />
+    <Compile Include="Container\IBusContainer.cs" />
+    <Compile Include="Core\AnonymousDisposable.cs" />
+    <Compile Include="Core\Bus.cs" />
+    <Compile Include="Core\BusReceiver.cs" />
+    <Compile Include="Core\BusReceiverState.cs" />
+    <Compile Include="Core\BusSender.cs" />
+    <Compile Include="Core\BusConfiguration.cs" />
+    <Compile Include="Core\BusConfigurationBuilder.cs" />
+    <Compile Include="Core\CommandSent.cs" />
+    <Compile Include="Core\SenderBase.cs" />
+    <Compile Include="Core\ExtensionMethods.cs" />
+    <Compile Include="Core\CommandReceived.cs" />
+    <Compile Include="Core\ReceiverHelper.cs" />
+    <Compile Include="Core\ReceiveState.cs" />
+    <Compile Include="Core\ReceiverBase.cs" />
+    <Compile Include="Core\ServiceBusEnpointData.cs" />
+    <Compile Include="Factories\ServiceBusConfigurationFactory.cs" />
+    <Compile Include="Factories\ServiceBusMessagingFactory.cs" />
+    <Compile Include="Factories\ServiceBusNamespaceManagerFactory.cs" />
+    <Compile Include="Interfaces\IBusReceiver.cs" />
+    <Compile Include="Interfaces\IBusSender.cs" />
+    <Compile Include="Interfaces\IBus.cs" />
+    <Compile Include="Interfaces\IBusConfiguration.cs" />
+    <Compile Include="Interfaces\ICommandSent.cs" />
+    <Compile Include="Interfaces\IMessagingFactory.cs" />
+    <Compile Include="Interfaces\INamespaceManager.cs" />
+    <Compile Include="Interfaces\IReceivedCommand.cs" />
+    <Compile Include="Interfaces\IServiceBusConfigurationFactory.cs" />
+    <Compile Include="Interfaces\IServiceBusSerializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\FastJsonServiceBusSerializer.cs" />
+    <Compile Include="Serialization\Getters.cs" />
+    <Compile Include="Serialization\JSON.cs" />
+    <Compile Include="Serialization\JsonParser.cs" />
+    <Compile Include="Serialization\JsonSerializer.cs" />
+    <Compile Include="Serialization\JsonServiceBusSerializer.cs" />
+    <Compile Include="Serialization\SafeDictionary.cs" />
+    <Compile Include="Serialization\ServiceBusSerializerBase.cs" />
+    <Compile Include="Serialization\XmlServiceBusSerializer.cs" />
+    <Compile Include="TransientFaultHandling.Core\ExponentialBackoff.cs" />
+    <Compile Include="TransientFaultHandling.Core\FixedInterval.cs" />
+    <Compile Include="TransientFaultHandling.Core\GlobalSuppressions.cs" />
+    <Compile Include="TransientFaultHandling.Core\Guard.cs" />
+    <Compile Include="TransientFaultHandling.Core\Incremental.cs" />
+    <Compile Include="TransientFaultHandling.Core\ITransientErrorDetectionStrategy.cs" />
+    <Compile Include="TransientFaultHandling.Core\Properties\ExceptionMessages.Designer.cs" />
+    <Compile Include="TransientFaultHandling.Core\Properties\Resources.Designer.cs" />
+    <Compile Include="TransientFaultHandling.Core\RetryingEventArgs.cs" />
+    <Compile Include="TransientFaultHandling.Core\RetryLimitExceededException.cs" />
+    <Compile Include="TransientFaultHandling.Core\RetryPolicy.cs" />
+    <Compile Include="TransientFaultHandling.Core\RetryPolicy.Generic.cs" />
+    <Compile Include="TransientFaultHandling.Core\RetryStrategy.cs" />
+    <Compile Include="TransientFaultHandling\AzureStorage\AzureStorageExtensions.cs" />
+    <Compile Include="TransientFaultHandling\AzureStorage\StorageTransientErrorDetectionStrategy.cs" />
+    <Compile Include="TransientFaultHandling\Configuration\DesignResources.Designer.cs" />
+    <Compile Include="TransientFaultHandling\Configuration\TransientFaultHandlingDesignTime.cs" />
+    <Compile Include="TransientFaultHandling\ExtensionMethods.cs" />
+    <Compile Include="TransientFaultHandling\GlobalSuppressions.cs" />
+    <Compile Include="TransientFaultHandling\Properties\Resources.Designer.cs" />
+    <Compile Include="TransientFaultHandling\Properties\SqlCommandResources.Designer.cs" />
+    <Compile Include="TransientFaultHandling\RetryManager.cs" />
+    <Compile Include="TransientFaultHandling\RetryManagerImpl.cs" />
+    <Compile Include="TransientFaultHandling\RetryPolicyException.cs" />
+    <Compile Include="TransientFaultHandling\ServiceBus\ServiceBusTransientErrorDetectionStrategy.cs" />
+    <Compile Include="TransientFaultHandling\ServiceBus\ServiceBusTransientErrorToDetermineExistanceDetectionStrategy.cs" />
+    <Compile Include="Utils\BusConfigurationHelper.cs" />
+    <Compile Include="Utils\MD5Helper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TransientFaultHandling.Core\Properties\ExceptionMessages.resx" />
+    <EmbeddedResource Include="TransientFaultHandling.Core\Properties\Resources.resx" />
+    <EmbeddedResource Include="TransientFaultHandling\Configuration\DesignResources.resx" />
+    <EmbeddedResource Include="TransientFaultHandling\Properties\Resources.resx" />
+    <EmbeddedResource Include="TransientFaultHandling\Properties\SqlCommandResources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiBridge.Handlers.Interfaces\ApiBridge.Handlers.Interfaces.csproj">
+      <Project>{04C82F00-5ED6-4296-B2AC-BD264F675C51}</Project>
+      <Name>ApiBridge.Handlers.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

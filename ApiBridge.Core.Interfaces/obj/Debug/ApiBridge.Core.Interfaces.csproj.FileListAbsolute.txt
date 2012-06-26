@@ -1,0 +1,6 @@
+C:\GitHub\ApiBridge\ApiBridge.Core.Interfaces\bin\Debug\ApiBridge.Core.Interfaces.dll
+C:\GitHub\ApiBridge\ApiBridge.Core.Interfaces\bin\Debug\ApiBridge.Core.Interfaces.pdb
+C:\GitHub\ApiBridge\ApiBridge.Core.Interfaces\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\GitHub\ApiBridge\ApiBridge.Core.Interfaces\obj\Debug\ResolveAssemblyReference.cache
+C:\GitHub\ApiBridge\ApiBridge.Core.Interfaces\obj\Debug\ApiBridge.Core.Interfaces.dll
+C:\GitHub\ApiBridge\ApiBridge.Core.Interfaces\obj\Debug\ApiBridge.Core.Interfaces.pdb

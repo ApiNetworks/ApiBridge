@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFE3D6A2-B43C-415E-8FFB-E3322DE83E96}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApiBridge.Web.MVC.ControlPanel</RootNamespace>
+    <AssemblyName>ApiBridge.Web.MVC.ControlPanel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc3.2.6.3.862\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.1.267\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Interop">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Esent.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Spatial">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Lucene.Net.Contrib.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SpellChecker">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resources\RavenDbMembership\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Resources\ServiceBus\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.8.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Abstractions">
+      <HintPath>..\packages\RavenDB.Client.1.0.960\lib\net40\Raven.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Backup">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Raven.Backup.exe</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Embedded">
+      <HintPath>..\packages\RavenDB.Embedded.1.0.960\lib\net40\Raven.Client.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight">
+      <HintPath>..\packages\RavenDB.Client.1.0.960\lib\net40\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Database">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Raven.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Munin">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Raven.Munin.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Smuggler">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Raven.Smuggler.exe</HintPath>
+    </Reference>
+    <Reference Include="Raven.Storage.Esent">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Raven.Storage.Esent.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Storage.Managed">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Raven.Storage.Managed.dll</HintPath>
+    </Reference>
+    <Reference Include="Spatial4n.Core">
+      <HintPath>..\packages\RavenDB.Database.1.0.960\lib\net40\Spatial4n.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutofacMvc3Startup.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\ContractsController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\UserManagementController.cs" />
+    <Compile Include="Controllers\VerifyController.cs" />
+    <Compile Include="Controllers\WidgetsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MockClasses\AdSizes.cs" />
+    <Compile Include="MockClasses\AdTypes.cs" />
+    <Compile Include="MockClasses\FormTypeEnumeration.cs" />
+    <Compile Include="Models\AdRendererModel.cs" />
+    <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Models\DataDocumentStore.cs" />
+    <Compile Include="Models\LeadCaptureModel.cs" />
+    <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\PageImpressionModel.cs" />
+    <Compile Include="Models\PostCommentModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\VerifyModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccountMembershipService.cs" />
+    <Compile Include="Services\FormsAuthenticationService.cs" />
+    <Compile Include="Validation\AccountValidation.cs" />
+    <Compile Include="Validation\ValidatePasswordLengthAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Database\raven-data.ico" />
+    <Content Include="App_Data\Database\Raven.Studio.xap" />
+    <Content Include="Content\themes\adminia\css\adminia-responsive.css" />
+    <Content Include="Content\themes\adminia\css\adminia.css" />
+    <Content Include="Content\themes\adminia\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\adminia\css\bootstrap.min.css" />
+    <Content Include="Content\themes\adminia\css\font-awesome.css" />
+    <Content Include="Content\themes\adminia\css\pages\dashboard.css" />
+    <Content Include="Content\themes\adminia\css\pages\faq.css" />
+    <Content Include="Content\themes\adminia\css\pages\login.css" />
+    <Content Include="Content\themes\adminia\css\pages\plans.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\ie.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\buttons\icons\cross.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\buttons\icons\key.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\buttons\icons\tick.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\buttons\readme.txt" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\buttons\screen.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\fancy-type\readme.txt" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\fancy-type\screen.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\icons\doc.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\icons\email.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\icons\external.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\icons\feed.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\icons\im.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\icons\pdf.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\icons\visited.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\icons\xls.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\readme.txt" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\link-icons\screen.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\rtl\readme.txt" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\plugins\rtl\screen.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\print.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\screen.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\src\forms.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\src\grid.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\src\grid.png" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\src\ie.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\src\print.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\src\reset.css" />
+    <Content Include="Content\themes\adminia\docs\assets\blueprint-css\src\typography.css" />
+    <Content Include="Content\themes\adminia\docs\assets\images\htmlstructure.png" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\1.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\17.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\18.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\2.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\3.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\4.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\5.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\6.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\7.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\8.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\9.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\intro.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\lightbox-new-window.png" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m1.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m10.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m11.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m12.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m13.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m14.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m15.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m16.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m17.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m18.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m19.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m2.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m20.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m21.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m22.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m23.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m24.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m3.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m4.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m5.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m6.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m7.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m8.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\assets\m9.jpg" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\examples.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\examples\ajax-html.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\examples\ajax-license.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\examples\ajax-login.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\examples\ajax-shake.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\examples\ajax-video.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\examples\iframe-html.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\help.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\help\css\reset.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\help\css\style.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\help\images\comment.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\help\images\dots.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\index.html" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\jquery.min.js" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\jquery.lightbox.min.js" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\carbono\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\carbono\images\jquery-lightbox-theme.png" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\carbono\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\carbono\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\carbono\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\classic-dark\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\classic-dark\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\classic-dark\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\classic-dark\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\classic\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\classic\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\classic\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\classic\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\default\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\default\images\jquery-lightbox-theme.png" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\default\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\default\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\default\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution-dark\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution-dark\images\jquery-lightbox-theme.png" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution-dark\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution-dark\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution-dark\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution\images\jquery-lightbox-theme.png" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\evolution\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\facebook\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\facebook\images\jquery-lightbox-theme.png" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\facebook\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\facebook\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\facebook\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\minimalist-dark\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\minimalist-dark\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\minimalist-dark\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\minimalist-dark\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\minimalist\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\minimalist\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\minimalist\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\minimalist\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\white-green\images\jquery-lightbox-theme.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\white-green\images\jquery-lightbox-theme.png" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\white-green\images\loading.gif" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\white-green\jquery.lightbox.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\js\lightbox\themes\white-green\jquery.lightbox.ie6.css" />
+    <Content Include="Content\themes\adminia\docs\jquery.lightbox\src\jquery.lightbox.js" />
+    <Content Include="Content\themes\adminia\font\fontawesome-webfont.svg" />
+    <Content Include="Content\themes\adminia\img\body-bg.png" />
+    <Content Include="Content\themes\adminia\img\headshot.png" />
+    <Content Include="Content\themes\adminia\js\bootstrap.js" />
+    <Content Include="Content\themes\adminia\js\bootstrap.min.js" />
+    <Content Include="Content\themes\adminia\js\charts\area.js" />
+    <Content Include="Content\themes\adminia\js\charts\bar.js" />
+    <Content Include="Content\themes\adminia\js\charts\line.js" />
+    <Content Include="Content\themes\adminia\js\charts\pie.js" />
+    <Content Include="Content\themes\adminia\js\excanvas.min.js" />
+    <Content Include="Content\themes\adminia\js\faq.js" />
+    <Content Include="Content\themes\adminia\js\jquery-1.7.2.min.js" />
+    <Content Include="Content\themes\adminia\js\jquery.flot.js" />
+    <Content Include="Content\themes\adminia\js\jquery.flot.orderBars.js" />
+    <Content Include="Content\themes\adminia\js\jquery.flot.pie.js" />
+    <Content Include="Content\themes\adminia\js\jquery.flot.resize.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Raven.Studio.xap" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\Database\Data" />
+    <None Include="App_Data\Database\IndexDefinitions\Temp%252fUsers%252fByApplicationNameAndUsername.index" />
+    <None Include="App_Data\Database\IndexDefinitions\Temp%252fUsers%252fByDateCreatedSortByDateCreated.index" />
+    <None Include="App_Data\Database\logs\RVN.log" />
+    <None Include="App_Data\Database\logs\RVNres00001.jrs" />
+    <None Include="App_Data\Database\logs\RVNres00002.jrs" />
+    <None Include="App_Data\Database\system\RVN.chk" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-carbono.psd" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-classic.psd" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-dark.psd" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-default.psd" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-evolution-dark.psd" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-evolution.psd" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-facebook.psd" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-minimalist.psd" />
+    <None Include="Content\themes\adminia\docs\jquery.lightbox\psd\theme-white-green.psd" />
+    <None Include="Content\themes\adminia\font\fontawesome-webfont.eot" />
+    <None Include="Content\themes\adminia\font\fontawesome-webfont.svgz" />
+    <None Include="Content\themes\adminia\font\fontawesome-webfont.ttf" />
+    <None Include="Content\themes\adminia\font\fontawesome-webfont.woff" />
+    <Content Include="Views\Verify\Index.cshtml" />
+    <Content Include="Views\Widgets\Index.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Widgets\AdRenderer.cshtml" />
+    <Content Include="Views\Widgets\LeadCapture.cshtml" />
+    <Content Include="Views\Widgets\PageImpression.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Contracts\Index.cshtml" />
+    <Content Include="Views\Shared\_template.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\UserManagement\Index.cshtml" />
+    <Content Include="Views\UserManagement\Log.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiBridge.Bus\ApiBridge.Bus.csproj">
+      <Project>{3747FBA0-6B78-433F-A5F7-F7D62975AFCB}</Project>
+      <Name>ApiBridge.Bus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Commands\ApiBridge.Commands.csproj">
+      <Project>{ACDC462E-8219-4D63-8C31-EB94CF7E6A5A}</Project>
+      <Name>ApiBridge.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Contracts\ApiBridge.Contracts.csproj">
+      <Project>{0CB96F75-A884-481A-9762-F1D29C3D563A}</Project>
+      <Name>ApiBridge.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Core.Interfaces\ApiBridge.Core.Interfaces.csproj">
+      <Project>{49E6C297-6D22-4656-94FA-EC11D180AE58}</Project>
+      <Name>ApiBridge.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Core.RavenDBMembership\ApiBridge.Core.RavenDBMembership.csproj">
+      <Project>{EE34E3F1-EF56-4A21-BA10-437081D4D7CC}</Project>
+      <Name>ApiBridge.Core.RavenDBMembership</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Core.Services\ApiBridge.Core.Services.csproj">
+      <Project>{7E10F3FB-8B49-4639-8AEC-8FF866E9ADD6}</Project>
+      <Name>ApiBridge.Core.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Handlers.Interfaces\ApiBridge.Handlers.Interfaces.csproj">
+      <Project>{04C82F00-5ED6-4296-B2AC-BD264F675C51}</Project>
+      <Name>ApiBridge.Handlers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Handlers\ApiBridge.Handlers.csproj">
+      <Project>{5AA5C664-BAB0-4711-B8BC-53D856BA3EF7}</Project>
+      <Name>ApiBridge.Handlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Web.Interfaces\ApiBridge.Web.Interfaces.csproj">
+      <Project>{C970FFB8-1819-427D-A896-AEB36DF97447}</Project>
+      <Name>ApiBridge.Web.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiBridge.Web.Services\ApiBridge.Web.Services.csproj">
+      <Project>{5B782938-D36E-4ED0-8148-5909F4425740}</Project>
+      <Name>ApiBridge.Web.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Database\IndexDefinitions\TemporaryIndexDefinitionsAsSource\" />
+    <Folder Include="App_Data\Database\Indexes\" />
+    <Folder Include="App_Data\Database\temp\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15940</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localpanel.apibridge.com</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
