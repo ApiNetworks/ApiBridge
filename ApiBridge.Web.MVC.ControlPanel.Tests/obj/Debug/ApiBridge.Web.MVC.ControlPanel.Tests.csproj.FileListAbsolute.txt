@@ -52,3 +52,4 @@ C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Tests\obj\Debug\ApiBridge.Web
 C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Tests\obj\Debug\ApiBridge.Web.MVC.ControlPanel.Tests.pdb
 C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Tests\bin\Debug\AutoMapper.dll
 C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Tests\bin\Debug\AutoMapper.xml
+C:\github\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Tests\bin\Debug\Microsoft.Web.Infrastructure.xml

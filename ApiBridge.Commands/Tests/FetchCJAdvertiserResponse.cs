@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ApiBridge.Contracts;
 
 namespace ApiBridge.Commands
 {
-    public class FetchCJAdvertisersEvent
+    public class FetchCJAdvertiserResponse
     {
         public string GetCommandStr()
         {
-            return "FetchCJAdvertisersEvent";
+            return "FetchCJAdvertiserResponse";
         }
 
         bool handled;
@@ -25,7 +26,6 @@ namespace ApiBridge.Commands
             }
         }
 
-        public string WebServiceToken { get; set; }
-        public string PublisherId { get; set; }
+        public Advertiser Advertiser { get; set; }
     }
 }

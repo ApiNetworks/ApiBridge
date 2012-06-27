@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Advertiser.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="Link.cs" />
     <Compile Include="ReservationForUniqueFieldValue.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="User.cs" />

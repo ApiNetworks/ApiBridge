@@ -75,3 +75,5 @@ C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel\obj\Debug\ApiBridge.Web.MVC.C
 C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel\obj\Debug\ApiBridge.Web.MVC.ControlPanel.pdb
 C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel\bin\AutoMapper.dll
 C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel\bin\AutoMapper.xml
+C:\github\ApiBridge\ApiBridge.Web.MVC.ControlPanel\bin\NLog.dll
+C:\github\ApiBridge\ApiBridge.Web.MVC.ControlPanel\bin\NLog.xml
