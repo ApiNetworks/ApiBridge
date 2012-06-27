@@ -1,0 +1,11 @@
+Azure Service Bus + RavenDB + MVC = Match made in heaven?
+
+Every once in a while a new twist on the old technology comes along that claims it will make your life as a developer just a bit easier. After all, how many new NOSQL solutions do we really need? Do I need to look into new MongoDB or Casandra database?  Do I really want to learn anything new again just to be able to claim that I now have a queue as part of my reliable way to persist data? Do I really want to send my data who knows where just to make it easier for my partners to access it? The answer will be the usual – it depends.
+
+As a developer who tries to solve real live problems (especially if you work for yourself hoping that your solution will change the world) you are facing the famous FASTER, BETTER, CHEAPER problem. No matter how smart you are you will have to pick two out of three choices and just live with it. Or do you?
+
+I invite you on a journey that took place not too long ago. My company, ApiBridge Media Inc, just went through a process of figuring out a way to build a distributed solution that we could use as a foundation to quickly build micro sites for our clients. Why should we care about micro sites in the age of giants such as Facebook and Google+? They are the beginning of most internet marketing efforts. Without ability to quickly test response to a new product or offer many companies are not able to adapt to rapidly changing conditions in a super competitive world of online advertising. No doubt that technology is evolving and most of the technical challenges related to serving advertising have already been successfully solved. You can easily place a super optimized campaign on some network that starts driving traffic to your website. You can analyze all your logs with help of many tools out there but when it comes to integrating all of that information, tweaking, testing your online offers you are back to the FASTER, BETTER, CHEAPER problem. Most of the ecommerce systems are not designed to handle changes. Change means a long and painful process development of a custom solution on top of your existing platform. Until now…
+
+This project is our take on this problem. It is a simple foundation project that you can use to quickly build a scalable website that can be easily integrated and any existing solution. 
+
+Enjoy…
