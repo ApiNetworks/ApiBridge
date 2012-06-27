@@ -40,14 +40,15 @@ namespace ApiBridge.ConsolePanel
         {
             BusConfiguration.WithSettings()
                 .UseAutofacContainer()
-                .ServiceBusApplicationId("xxx")
-                .ServiceBusNamespace("xxx")
-                .ServiceBusIssuerName("xxx")
-                .ServiceBusIssuerKey("xxx")
-                .InboundTopicName("xxx")
-                .OutboundTopicName("xxx")
+                .ServiceBusApplicationId("apiapp")
+                .ServiceBusNamespace("apibridge")
+                .ServiceBusIssuerName("owner")
+                .ServiceBusIssuerKey("2vunIjmTPh29/dwWGgjgP6XJmAgG9sGGbyhRPSqk5IQ=")
+                .InboundTopicName("clienttopic")
+                .OutboundTopicName("servertopic")
                 .RegisterAssembly(typeof(ComplexApiBridgeCommandHandler).Assembly)
                 .Configure();
+
         }
 
         static void Main(string[] args)
@@ -61,13 +62,13 @@ namespace ApiBridge.ConsolePanel
             
             while (true)
             {
-                Console.Write("Enter Text: ");
-                ApiBridgeCommand cmd = new ApiBridgeCommand();
-                cmd.Payload = Console.ReadLine();
-                BusConfiguration.Instance.Bus.PublishAsync<ApiBridgeCommand>(cmd, (result) =>
-                {
-                    Console.WriteLine("Sent:" + result.IsSuccess);
-                });
+                //Console.Write("Enter Text: ");
+                //ApiBridgeCommand cmd = new ApiBridgeCommand();
+                //cmd.Payload = Console.ReadLine();
+                //BusConfiguration.Instance.Bus.PublishAsync<ApiBridgeCommand>(cmd, (result) =>
+                //{
+                //    Console.WriteLine("Sent:" + result.IsSuccess);
+                //});
             }
         }
 

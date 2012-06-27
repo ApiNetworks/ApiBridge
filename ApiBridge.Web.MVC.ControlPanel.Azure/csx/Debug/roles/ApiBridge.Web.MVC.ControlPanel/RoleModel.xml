@@ -30,14 +30,14 @@
     <Property name="Configuration" value="Debug" />
     <Property name="Platform" value="AnyCPU" />
     <Property name="RoleTargetFramework" value="v4.0" />
-    <Property name="OutputDir" value="C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Azure\obj\Debug\ApiBridge.Web.MVC.ControlPanel\" />
+    <Property name="OutputDir" value="C:\github\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Azure\obj\Debug\ApiBridge.Web.MVC.ControlPanel\" />
     <Property name="EntryPoint" value="ApiBridge.Web.MVC.ControlPanel.dll" />
-    <Property name="SourceDir" value="C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel\" />
-    <Property name="SitePhysicalPath" value="C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel\" />
+    <Property name="SourceDir" value="C:\github\ApiBridge\ApiBridge.Web.MVC.ControlPanel\" />
+    <Property name="SitePhysicalPath" value="C:\github\ApiBridge\ApiBridge.Web.MVC.ControlPanel\" />
     <Property name="TargetRuntimeVersion" value="v4.0" />
   </Properties>
   <Sites>
-    <Site name="Web" physicalDirectory="C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel\">
+    <Site name="Web" physicalDirectory="C:\github\ApiBridge\ApiBridge.Web.MVC.ControlPanel\">
       <Bindings>
         <Binding name="Endpoint1" endpointName="Endpoint1" />
       </Bindings>

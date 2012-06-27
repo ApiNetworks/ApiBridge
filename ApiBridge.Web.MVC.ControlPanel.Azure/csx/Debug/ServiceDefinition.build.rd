@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApiBridge.Web.MVC.ControlPanel.Azure" generation="1" functional="0" release="0" Id="3743e59c-8c3c-46f0-9a2c-6f5c7fb9aed6" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApiBridge.Web.MVC.ControlPanel.Azure" generation="1" functional="0" release="0" Id="cd741214-eadc-458d-a199-ae1e39d8044d" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="ApiBridge.Web.MVC.ControlPanel.AzureGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -42,7 +42,7 @@
       </maps>
       <components>
         <groupHascomponents>
-          <role name="ApiBridge.Web.MVC.ControlPanel" generation="1" functional="0" release="0" software="C:\GitHub\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Azure\csx\Debug\roles\ApiBridge.Web.MVC.ControlPanel" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaIISHost.exe " memIndex="1792" hostingEnvironment="frontendadmin" hostingEnvironmentVersion="2">
+          <role name="ApiBridge.Web.MVC.ControlPanel" generation="1" functional="0" release="0" software="C:\github\ApiBridge\ApiBridge.Web.MVC.ControlPanel.Azure\csx\Debug\roles\ApiBridge.Web.MVC.ControlPanel" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaIISHost.exe " memIndex="1792" hostingEnvironment="frontendadmin" hostingEnvironmentVersion="2">
             <componentports>
               <inPort name="Endpoint1" protocol="http" portRanges="80" />
             </componentports>
@@ -68,9 +68,9 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="b844875c-3d8c-426f-853a-7132da3161f2" ref="Microsoft.RedDog.Contract\ServiceContract\ApiBridge.Web.MVC.ControlPanel.AzureContract@ServiceDefinition.build">
+    <implementation Id="55166157-42a9-4612-8a9e-8aa0a62a9866" ref="Microsoft.RedDog.Contract\ServiceContract\ApiBridge.Web.MVC.ControlPanel.AzureContract@ServiceDefinition.build">
       <interfacereferences>
-        <interfaceReference Id="09ecdb53-3ced-4fc1-a431-7cfb3408ddea" ref="Microsoft.RedDog.Contract\Interface\ApiBridge.Web.MVC.ControlPanel:Endpoint1@ServiceDefinition.build">
+        <interfaceReference Id="9ea6be58-2b55-4adb-9586-973ab935979d" ref="Microsoft.RedDog.Contract\Interface\ApiBridge.Web.MVC.ControlPanel:Endpoint1@ServiceDefinition.build">
           <inPort>
             <inPortMoniker name="/ApiBridge.Web.MVC.ControlPanel.Azure/ApiBridge.Web.MVC.ControlPanel.AzureGroup/ApiBridge.Web.MVC.ControlPanel:Endpoint1" />
           </inPort>
