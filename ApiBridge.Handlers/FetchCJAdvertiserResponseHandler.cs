@@ -27,7 +27,7 @@ namespace ApiBridge.Handlers
             }
             else
             {
-                Console.WriteLine(ev.Body.Advertiser.AdvertiserName);
+                Console.WriteLine(ev.Body.Advertiser.AdvertiserName + " Link Count: " + ev.Body.Advertiser.Links.Count);
             }
         }
     }

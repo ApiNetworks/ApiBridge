@@ -27,5 +27,7 @@ namespace ApiBridge.Commands
 
         public string WebServiceToken { get; set; }
         public string PublisherId { get; set; }
+        public Guid WebIdentityId { get; set; }
+        
     }
 }

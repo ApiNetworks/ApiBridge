@@ -12,7 +12,13 @@ namespace ApiBridge.Contracts
         public System.Guid Id { get; set; }
 
         [DataMember]
+        public string MerchantId { get; set; }
+
+        [DataMember]
         public string Context { get; set; }
+
+        [DataMember]
+        public Guid WebIdentityId { get; set; }
 
         [DataMember]
         public string Address { get; set; }
@@ -100,6 +106,9 @@ namespace ApiBridge.Contracts
 
         [DataMember]
         public List<Link> Links { get; set; }
+
+        //[DataMember]
+        //public 
 
     }
 }
