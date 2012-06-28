@@ -158,16 +158,23 @@ namespace ApiBridge.Bus.Core
             using (CloudEnvironment.EnsureSafeHttpContext())
             {
                 //set up the server first.
-                sender = config.Container.Resolve<IBusSender>();
-                receiver = config.Container.Resolve<IBusReceiver>();
+                // Only resolve sender when a topic name is specified
+                if (!String.IsNullOrEmpty(config.OutboundTopicName))
+                    sender = config.Container.Resolve<IBusSender>();
 
-                foreach (var item in config.RegisteredAssemblies)
+                // Only resolve receiver when an inbound topic name is specified
+                if (!String.IsNullOrEmpty(config.InboundTopicName))
                 {
-                    RegisterAssembly(item);
-                }
-                foreach (var item in config.RegisteredSubscribers)
-                {
-                    Subscribe(item);
+                    receiver = config.Container.Resolve<IBusReceiver>();
+                    foreach (var item in config.RegisteredAssemblies)
+                    {
+                        RegisterAssembly(item);
+                    }
+
+                    foreach (var item in config.RegisteredSubscribers)
+                    {
+                        Subscribe(item);
+                    }
                 }
             }
         }
